@@ -1,14 +1,14 @@
 # Don't change these
 remote_theme: pages-themes/primer
 plugins:
-- jekyll-remote-theme
+  - jekyll-remote-theme
 spec_server: specs.amwa.tv
 
 # AMWA ID
-amwa_id: BCP-TEMPLATE
+amwa_id: BCP-007-03
 
 # Base name for site (typically lower case version of AMWA ID, or the repo name)
-baseurl: /bcp-template
+baseurl: /bcp-007-03
 
 # Which release or branch appears in header links and on the home page
 default_tree: branches/v1.0-dev # alternatively e.g. releases/v1.0
