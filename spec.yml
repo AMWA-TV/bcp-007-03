@@ -1,0 +1,10 @@
+amwa_id: BCP-TEMPLATE
+url: https://specs.amwa.tv/bcp-template
+name: AMWA NMOS Best Common Practice Template
+status: Continuing
+repo_name: bcp-template
+alt_repo_name: nmos-bcp-template
+repo_url: https://github.com/AMWA-TV/bcp-template
+releases:
+default_branch: v1.0-dev
+show_in_index: false
