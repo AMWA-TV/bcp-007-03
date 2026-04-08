@@ -1,0 +1,16 @@
+{
+    "description": "MXL sender",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "flow_id": "fb75bb21-36a1-5045-8a3d-a8ee69e913d7",
+    "id": "dd7b118d-9840-53ba-98e3-a44d97c55d28",
+    "interface_bindings": [],
+    "label": "MXL sender",
+    "manifest_href": null,
+    "subscription": {
+        "active": true,
+        "receiver_id": null
+    },
+    "tags": {},
+    "transport": "urn:x-nmos:transport:mxl",
+    "version": "1773758086:564389300"
+}

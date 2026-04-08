@@ -1,0 +1,20 @@
+{
+    "caps": {
+        "media_types": [
+            "audio/float32"
+        ]
+    },
+    "description": "MXL audio receiver",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:audio",
+    "id": "18ace1af-be85-576d-8757-1ac7453232e2",
+    "interface_bindings": [],
+    "label": "MXL audio receiver",
+    "subscription": {
+        "active": false,
+        "sender_id": null
+    },
+    "tags": {},
+    "transport": "urn:x-nmos:transport:mxl",
+    "version": "1773758086:510759500"
+}
