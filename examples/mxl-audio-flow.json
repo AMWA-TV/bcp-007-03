@@ -1,0 +1,23 @@
+{
+    "bit_depth": 32,
+    "description": "MXL audio flow",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:audio",
+    "grain_rate": {
+        "denominator": 1,
+        "numerator": 60
+    },
+    "id": "8b60ade3-aaee-5fcb-9899-238a6838d5bf",
+    "label": "MXL audio flow",
+    "media_type": "audio/float32",
+    "parents": [
+        "bed66a93-adcd-57fc-8ccd-4426789a1c53"
+    ],
+    "sample_rate": {
+        "denominator": 1,
+        "numerator": 48000
+    },
+    "source_id": "9164f939-91be-5442-ad4f-f077392d6a31",
+    "tags": {},
+    "version": "1773758086:507757600"
+}
