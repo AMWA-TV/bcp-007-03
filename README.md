@@ -9,15 +9,17 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-- x
+- Establishes a new IS-05 transport for NMOS Senders and Receivers implementing MXL and allows Controllers to establish compatible connections.
+- Establishes a standardized mechanism for NMOS Senders and Receivers to declare support for MXL.
 
 ### Why does it matter?
 
-- x
+- An NMOS Controller can connect compatible MXL Receivers to MXL Senders.
 
 ### How does it work?
 
-- x
+- Documents how MXL capabilities are announced by both Senders and Receivers.
+- Outlines the requirements for Senders, Receivers, and Controllers regarding MXL support.
 
 <!-- INTRO-END -->
 
