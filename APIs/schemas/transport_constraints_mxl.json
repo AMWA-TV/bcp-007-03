@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Used to express the dynamic constraints on MXL transport parameters.",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^ext_[a-zA-Z0-9_]+$":{
+      "$ref": "constraint-schema.json#/definitions/constraint"
+    }
+  },
+  "properties": {
+    "mxl_domain_id": {
+      "$ref": "constraint-schema.json#/definitions/constraint"
+    },
+    "mxl_flow_id": {
+      "$ref": "constraint-schema.json#/definitions/constraint"
+    }
+  }
+}
