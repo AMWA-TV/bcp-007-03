@@ -121,7 +121,7 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 ## Controllers
 
-A controller MUST be able to discover MXL Senders and MXL Receivers by using the query API.
+A controller MUST be able to discover MXL Senders and MXL Receivers by using the IS-04 Query API.
 
 A controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 API.
 
