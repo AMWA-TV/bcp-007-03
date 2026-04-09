@@ -1,0 +1,18 @@
+{
+    "caps": {},
+    "clock_name": "clk0",
+    "description": "MXL data source",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:data",
+    "grain_rate": {
+        "denominator": 1,
+        "numerator": 60
+    },
+    "id": "a41dbad6-a124-5b2c-a4c6-cdce18cb533e",
+    "label": "MXL data source",
+    "parents": [
+        "987b61ae-24ee-5f3e-828a-c4b42317d067"
+    ],
+    "tags": {},
+    "version": "1773758086:508760200"
+}

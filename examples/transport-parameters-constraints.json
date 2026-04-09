@@ -1,0 +1,14 @@
+[
+    {
+        "mxl_domain_id": {
+            "enum": [
+                "domain-b"
+            ]
+        },
+        "mxl_flow_id": {
+            "enum": [
+                "83df0a80-92d1-489d-a82b-077e2cef74cd"
+            ]
+        }
+    }
+]

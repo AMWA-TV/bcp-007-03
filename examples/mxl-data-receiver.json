@@ -1,0 +1,20 @@
+{
+    "caps": {
+        "media_types": [
+            "video/smpte291"
+        ]
+    },
+    "description": "MXL data receiver",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:data",
+    "id": "a2603135-c233-5bcc-8d0f-775f4e13aa30",
+    "interface_bindings": [],
+    "label": "MXL data receiver",
+    "subscription": {
+        "active": false,
+        "sender_id": null
+    },
+    "tags": {},
+    "transport": "urn:x-nmos:transport:mxl",
+    "version": "1773758086:513300400"
+}
