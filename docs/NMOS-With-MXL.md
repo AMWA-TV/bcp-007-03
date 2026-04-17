@@ -20,7 +20,7 @@ The NMOS terms 'Controller', 'Node', 'Source', 'Flow', 'Sender', 'Receiver' are 
 
 ## MXL IS-04 Sources, Flows and Senders
 
-Nodes that encapsulate media functions capable of MXL writing MUST expose Source, Flow and Sender resources in their IS-04 Node API.
+Nodes that encapsulate media functions containing MXL writers MUST expose Source, Flow and Sender resources in their IS-04 Node API.
 
 Nodes compliant with this specification MUST implement IS-04 v1.3 or higher.
 
@@ -63,7 +63,7 @@ The response for requests against the `/transportfile` endpoint of an MXL IS-05 
 
 ## MXL IS-04 Receivers
 
-Nodes that encapsulate media functions capable of MXL reading MUST expose a Receiver resource in their IS-04 Node API.
+Nodes that encapsulate media functions containing MXL readers MUST expose a Receiver resource in their IS-04 Node API.
 
 An MXL Receiver resource MUST set the `transport` attribute to `urn:x-nmos:transport:mxl`.
 
