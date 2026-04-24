@@ -20,7 +20,7 @@ The NMOS terms 'Controller', 'Node', 'Source', 'Flow', 'Sender', 'Receiver' are 
 
 ## MXL IS-04 Sources, Flows and Senders
 
-Nodes that encapsulate media functions containing MXL writers MUST expose Source, Flow and Sender resources in their IS-04 Node API.
+Nodes that encapsulate media functions containing MXL writers MUST expose Source, Flow and Sender resources for each MXL writer in their IS-04 Node API.
 
 Nodes compliant with this specification MUST implement IS-04 v1.3 or higher.
 
@@ -63,7 +63,7 @@ The response for requests against the `/transportfile` endpoint of an MXL IS-05 
 
 ## MXL IS-04 Receivers
 
-Nodes that encapsulate media functions containing MXL readers MUST expose a Receiver resource in their IS-04 Node API.
+Nodes that encapsulate media functions containing MXL readers MUST expose a Receiver resource for each MXL reader in their IS-04 Node API.
 
 An MXL Receiver resource MUST set the `transport` attribute to `urn:x-nmos:transport:mxl`.
 
@@ -102,8 +102,12 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 
 | Name           | Description                                                                                                                                                                                                                                  |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mxl_domain_id`| Specifies the MXL domain id where the MXL flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint; the special value `auto` lets the Sender or Receiver choose a domain automatically.               |
-| `mxl_flow_id`  | Specifies the MXL flow id which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint; the special value `auto` lets the Sender or Receiver choose a flow automatically. |
+| `mxl_domain_id`| Specifies the MXL domain id where the MXL flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
+| `mxl_flow_id`  | Specifies the MXL flow id which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
+
+MXL Senders and Receivers MUST NOT allow the special value `auto` for `mxl_domain_id` or `mxl_flow_id`.
+
+Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-04 Flow resource.
 
 ### Receivers
 
@@ -123,9 +127,12 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 A controller MUST be able to discover MXL Senders and MXL Receivers by using the IS-04 Query API.
 
-A controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 API.
+A controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
+
+When a controller makes a `PATCH` request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
 
 Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the flow compatibility between MXL Senders and MXL Receivers.
+
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
 [MXL]: https://tech.ebu.ch/dmf/mxl
