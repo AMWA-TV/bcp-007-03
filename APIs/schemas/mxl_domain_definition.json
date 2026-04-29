@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "description": "MXL Domain definition schema",
+  "title": "MXL Domain definition",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": [
+        "string"
+      ],
+      "description": "Specifies the MXL domain id.",
+      "anyOf": [
+        {
+          "format": "uuid"
+        }
+      ]
+    },
+    "label": {
+      "type": [
+        "string"
+      ],
+      "description": "Specifies the MXL domain label."
+    },
+    "description": {
+      "type": [
+        "string"
+      ],
+      "description": "Specifies the MXL domain description."
+    }
+  },
+  "required": [
+    "id",
+    "label"
+  ],
+  "additionalProperties": true
+}
