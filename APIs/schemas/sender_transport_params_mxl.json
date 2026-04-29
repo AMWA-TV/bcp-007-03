@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
   "description": "Describes MXL transport parameters. The constraints in this schema are minimum constraints, but may be further constrained at the constraints endpoint. Senders MUST support at least the `mxl_domain_id` and `mxl_flow_id` parameters.",
   "title": "MXL Sender Transport Parameters",
   "type": "object",
@@ -12,10 +12,7 @@
       "description": "Specifies the MXL domain id where the MXL flow will be located. A null value indicates that the domain ID has not been configured.",
       "anyOf": [
         {
-          "type": "string"
-        },
-        {
-          "pattern": "^auto$"
+          "format": "uuid"
         },
         {
           "type": "null"
@@ -31,9 +28,6 @@
       "anyOf": [
         {
           "format": "uuid"
-        },
-        {
-          "pattern": "^auto$"
         },
         {
           "type": "null"
