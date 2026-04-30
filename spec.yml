@@ -7,4 +7,4 @@ alt_repo_name: bcp-nmos-mxl
 repo_url: https://github.com/AMWA-TV/bcp-007-03
 releases:
 default_branch: v1.0-dev
-show_in_index: false
+show_in_index: true
