@@ -105,7 +105,19 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 | `mxl_domain_id`| Specifies the MXL domain id where the MXL flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
 | `mxl_flow_id`  | Specifies the MXL flow id which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
 
-MXL Senders and Receivers MUST NOT allow the special value `auto` for `mxl_domain_id` or `mxl_flow_id`.
+Where a value is not yet determined, implementations MUST use `null`, consistent with [IS-05 *APIs: Server Side Implementation*][IS-05 uninitialised].
+
+[IS-05 *APIs: Server Side Implementation*, *Use of auto*][IS-05 use of auto] allows the string `"auto"` in `/staged` so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list `"auto"` as an option via the `/constraints` endpoint.
+
+#### Sender Transport Parameters
+
+- `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured and MUST accept `"auto"` where the Sender resolves the MXL Flow identifier (for example when only one Flow applies, so a Controller need not supply the identifier when patching).
+- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system and MUST accept `"auto"` where a single MXL domain applies or the Sender resolves the domain without a Controller supplied id.
+
+#### Receiver Transport Parameters
+
+- `mxl_flow_id` MUST accept `null` for an unconfigured Receiver as the identifier may be unknown until the Receiver has been suitably patched, and MUST NOT accept `"auto"`.
+- `mxl_domain_id` MUST accept `null` for an unconfigured Receiver and MUST accept `"auto"` for the single-domain case and, where appropriate, in multi-domain deployments (for example so the Receiver may use available domains when resolving `mxl_flow_id`, including with replicated domains).
 
 Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-04 Flow resource.
 
@@ -138,6 +150,8 @@ Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order
 [MXL]: https://tech.ebu.ch/dmf/mxl
 [IS-04]: https://specs.amwa.tv/is-04/
 [IS-05]: https://specs.amwa.tv/is-05/
+[IS-05 uninitialised]: https://specs.amwa.tv/is-05/releases/v1.1.2/docs/APIs_-_Server_Side_Implementation.html#uninitialised-senders-and-receivers "IS-05 APIs: Server Side Implementation — Uninitialised Senders and Receivers"
+[IS-05 use of auto]: https://specs.amwa.tv/is-05/releases/v1.1.2/docs/APIs_-_Server_Side_Implementation.html#use-of-auto "IS-05 APIs: Server Side Implementation — Use of auto"
 [BCP-004-01]: https://specs.amwa.tv/bcp-004-01/ "AMWA BCP-004-01 NMOS Receiver Capabilities"
 [NMOS formats parameter register]:  https://specs.amwa.tv/nmos-parameter-registers/branches/main/formats/ "NMOS Formats"
 [NMOS media types parameter register]:  https://specs.amwa.tv/nmos-parameter-registers/branches/main/media-types/ "NMOS Media Types"
