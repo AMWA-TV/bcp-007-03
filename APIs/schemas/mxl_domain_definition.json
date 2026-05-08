@@ -26,11 +26,25 @@
         "string"
       ],
       "description": "Specifies the MXL domain description."
+    },
+    "tags": {
+      "description": "Key value set of freeform string tags to aid in filtering. Values should be represented as an array of strings. Can be empty.",
+      "type": "object",
+      "patternProperties": {
+        "": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "required": [
     "id",
-    "label"
+    "label",
+    "description",
+    "tags"
   ],
   "additionalProperties": true
 }
