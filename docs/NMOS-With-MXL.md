@@ -123,6 +123,134 @@ A successful activation resulting in `master_enable` becoming `true` MUST start 
 
 A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation.
 
+## MXL Domain volume and identity mapping
+
+The base folder where MXL flows are stored is called an MXL domain.
+Multiple MXL domains can co-exist on the same host.  
+MXL domains are mapped to media functions at deployment time through volume mapping.
+This means that the path where a domain folder is located inside a container could be different from the path where the domain folder is located on the host.
+
+Consider the following simple deployment example where we have two mxl-writer media functions and an mxl-reader media function.
+
+```yml
+services:
+  writer-media-function-1:
+    image: mxl-writer:latest
+    volumes:
+      - type: bind
+        source: /Volumes/mxl/domain_1
+        target: /domain_1
+  writer-media-function-2:
+    image: mxl-writer:latest
+    volumes:
+      - type: bind
+        source: /Volumes/mxl/domain_2
+        target: /domain_2
+  reader-media-function:
+    image: mxl-reader:latest
+    volumes:
+      - type: bind
+        source: /Volumes/mxl/domain_1
+        target: /domain_a
+        read_only: true
+      - type: bind
+        source: /Volumes/mxl/domain_2
+        target: /domain_b
+        read_only: true
+```
+
+Without applying any strong identity to the MXL domains the reader media function cannot resolve `domain_a` and `domain_b` as being the same as `domain_1` and `domain_2`.
+
+All MXL domains MUST hold a definition json file `domain_def.json` in their host directory.
+The domain definition json object MUST respect the [MXL Domain definition schema](../APIs/schemas/mxl_domain_definition.json) where the following attributes are defined as:
+
+* id - the unique identity of the domain as a UUID
+* label - the label of the domain as a string
+* description - optional description of the domain as a string
+
+An example MXL domain definition is provided in [Examples](../examples/).
+
+It is assumed media functions will be configured by an orchestrator with the MXL domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL domain for the `domain_def.json` file.
+The identity of each domain travels with each domain mapping inside each media function, meaning media functions can resolve domains to the same identity even when they have been mapped to different local paths inside the media function.
+
+Given the above deployment example, this is the local path structure inside each of the media functions:
+
+writer-media-function-1:
+
+```txt
+mxl-holder/
+├── domain-01/
+│   ├── domain_def.json
+│   └── 4c02e7c0-ffeb-4595-8673-a265d103123a.mxl-flow/
+│       └── flow_def.json
+```
+
+mxl-holder/domain-01/domain_def.json
+
+```json
+{
+    "id": "1ac254d9-a5eb-475f-a2b6-3d02a5cfbc82",
+    "label": "Red Studio",
+    "description": "MXL Red Studio domain"
+}
+```
+
+writer-media-function-2:
+
+```txt
+my-mxl-holder/
+├── domain-02/
+│   ├── domain_def.json
+│   └── 3494dc19-22c2-4f00-865b-cdbeee7909f0.mxl-flow/
+│       └── flow_def.json
+```
+
+my-mxl-holder/domain-02/domain_def.json
+
+```json
+{
+    "id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
+    "label": "Blue Studio",
+    "description": "MXL Blue Studio domain"
+}
+```
+
+reader-media-function:
+
+```txt
+base-mxl-holder/
+├── domain-a/
+│   ├── domain_def.json
+│   └── 4c02e7c0-ffeb-4595-8673-a265d103123a.mxl-flow/
+│       └── flow_def.json
+├── domain-b/
+│   ├── domain_def.json
+│   └── 3494dc19-22c2-4f00-865b-cdbeee7909f0.mxl-flow/
+│       └── flow_def.json
+```
+
+base-mxl-holder/domain-a/domain_def.json
+
+```json
+{
+    "id": "1ac254d9-a5eb-475f-a2b6-3d02a5cfbc82",
+    "label": "Red Studio",
+    "description": "MXL Red Studio domain"
+}
+```
+
+base-mxl-holder/domain-b/domain_def.json
+
+```json
+{
+    "id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
+    "label": "Blue Studio",
+    "description": "MXL Blue Studio domain"
+}
+```
+
+where `domain-a` and `domain-b` inside the reader-media-function resolve to the same identity as `domain-01` and `domain-02` mapped in the writer media functions.
+
 ## Controllers
 
 A controller MUST be able to discover MXL Senders and MXL Receivers by using the IS-04 Query API.
