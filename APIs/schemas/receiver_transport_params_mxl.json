@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "mxl_domain_id": {
-      "description": "Specifies the MXL Domain ID where the MXL Flow will be located. The Receiver lists allowed Domain IDs in the constraints endpoint. Where the domain is not yet determined, implementations use null. MXL Receivers accept null for an unconfigured Receiver. MXL Receivers accept the literal auto for the single-domain case and, where appropriate, in multi-domain deployments (for example so the Receiver may use available domains when resolving mxl_flow_id, including with replicated domains). The constraints endpoint does not list auto as an available option.",
+      "description": "Specifies the MXL Domain ID where the MXL Flow will be located. The Receiver lists allowed Domain IDs in the constraints endpoint. Where the domain is not yet determined, implementations use null. MXL Receivers accept null for an unconfigured Receiver. MXL Receivers support the literal auto for the single-domain case and, where appropriate, in multi-domain deployments. In replicated topologies, the selected domain may differ in identity from an origin domain (for example permissions, security context, or administrative boundary), provided it yields a valid operational configuration. Where auto cannot be resolved to a valid value for /active in the current operating context, the Receiver may reject the request or activation. The constraints endpoint does not list auto as an available option.",
       "anyOf": [
         {
           "type": "null"

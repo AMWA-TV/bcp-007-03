@@ -107,17 +107,21 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 
 Where a value is not yet determined, implementations MUST use `null`, consistent with [IS-05 *APIs: Server Side Implementation*][IS-05 uninitialised].
 
-[IS-05 *APIs: Server Side Implementation*, *Use of auto*][IS-05 use of auto] allows the string `"auto"` in `/staged` so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list `"auto"` as an option via the `/constraints` endpoint.
+[IS-05 *APIs: Server Side Implementation*, *Use of auto*][IS-05 use of auto] allows `"auto"` in `/staged` so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list `"auto"` as an option via the `/constraints` endpoint.
+
+Support for `"auto"` indicates that an implementation supports automatic-selection semantics for that parameter in `/staged`. It does not guarantee that every `PATCH` can be activated.
+
+A Sender or Receiver MUST reject a `PATCH` request, or reject activation, when `"auto"` (or any supplied parameter value) is used but cannot be resolved to a valid concrete value for `/active` under current operational conditions. This includes, but is not limited to, cases where no valid domain or flow can be selected, where a referenced domain or flow is unavailable or unreachable, or where the submitted parameter combination is not operationally satisfiable.
 
 #### Sender Transport Parameters
 
-- `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured and MUST accept `"auto"` where the Sender resolves the MXL Flow identifier (for example when only one Flow applies, so a Controller need not supply the identifier when patching).
-- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system and MUST accept `"auto"` where a single MXL domain applies or the Sender resolves the domain without a Controller supplied id.
+- `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured. It MUST support `"auto"` where the Sender resolves the MXL Flow identifier (for example when only one Flow applies, so a Controller need not supply the identifier when patching). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
+- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system. It MUST support `"auto"` where a single MXL domain applies or the Sender resolves the domain without a Controller supplied id. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
 
 #### Receiver Transport Parameters
 
 - `mxl_flow_id` MUST accept `null` for an unconfigured Receiver as the identifier may be unknown until the Receiver has been suitably patched, and MUST NOT accept `"auto"`.
-- `mxl_domain_id` MUST accept `null` for an unconfigured Receiver and MUST accept `"auto"` for the single-domain case and, where appropriate, in multi-domain deployments (for example so the Receiver may use available domains when resolving `mxl_flow_id`, including with replicated domains).
+- `mxl_domain_id` MUST accept `null` for an unconfigured Receiver and MUST support `"auto"` where the Receiver is able to automatically determine the domain. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Receiver MUST reject the request or activation.
 
 Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-04 Flow resource.
 
