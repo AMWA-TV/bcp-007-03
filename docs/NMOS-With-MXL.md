@@ -161,7 +161,7 @@ services:
 
 Without applying any strong identity to the MXL domains the reader media function cannot resolve `domain_a` and `domain_b` as being the same as `domain_1` and `domain_2`.
 
-All MXL domains MUST hold a definition json file `domain_def.json` in their folder on the host.
+All MXL domains MUST hold a definition json file `domain_def.json` in their host directory.
 The domain definition json object MUST respect the [MXL Domain definition schema](../APIs/schemas/mxl_domain_definition.json) where the following attributes are defined as:
 
 * id - the unique identity of the domain as a UUID
