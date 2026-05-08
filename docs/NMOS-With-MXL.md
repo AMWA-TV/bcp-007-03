@@ -80,7 +80,7 @@ Typical values used by MXL Receiver resources for the `media_types` attribute in
 * `audio/float32`
 * `video/smpte291`
 
-The Receiver MUST express its limitations or preferences regarding the flows that it supports consuming by declaring constraints in accordance with the [BCP-004-01][] specification. The Receiver SHOULD express its constraints as precisely as possible, to enable a Controller to determine, with high confidence, the Receiver's compatibility with available MXL flows. It is not always practical for the constraints to enumerate every type of flow a Receiver can or cannot consume; however, they SHOULD describe as many commonly used operating points as practical, along with any preferences.
+The Receiver MUST express its limitations or preferences regarding the flows that it supports consuming by declaring Receiver Capabilities in accordance with the [BCP-004-01][] specification. The Receiver SHOULD express its capabilities as precisely as possible, to enable a Controller to determine, with high confidence, the Receiver's compatibility with available MXL flows. It is not always practical for the parameter constraints to enumerate every type of flow a Receiver can or cannot consume; however, they SHOULD describe as many commonly used operating points as practical, along with any preferences.
 
 The Receiver MUST use the `constraint_sets` parameter within the `caps` object to describe supported combinations of parameters, using the parameter constraints defined in the [Capabilities Register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers. The full details are described in [BCP-004-01][] NMOS Receiver Capabilities.
 
