@@ -34,7 +34,7 @@ Examples of Source resources are provided in [Examples](../examples/).
 
 An MXL Flow resource MUST set the `format` attribute to a value specified in the [NMOS formats parameter register][].
 
-An MXLFlow resource MUST set the `media_type` attribute to a value specified in the [NMOS media types parameter register][].
+An MXL Flow resource MUST set the `media_type` attribute to a value specified in the [NMOS media types parameter register][].
 
 Typical values used by MXL Flow resources for the `media_type` attribute include but are not limited to:
 
