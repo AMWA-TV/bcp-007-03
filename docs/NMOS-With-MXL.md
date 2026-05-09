@@ -102,8 +102,8 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 
 | Name           | Description                                                                                                                                                                                                                                  |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mxl_domain_id`| Specifies the MXL Domain id where the MXL Flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
-| `mxl_flow_id`  | Specifies the MXL Flow id which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
+| `mxl_domain_id`| Specifies the MXL Domain ID where the MXL Flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
+| `mxl_flow_id`  | Specifies the MXL Flow ID which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
 
 Where a value is not yet determined, implementations MUST use `null`, consistent with [IS-05 *APIs: Server Side Implementation*][IS-05 uninitialised].
 
@@ -117,17 +117,17 @@ A Sender or Receiver MUST reject a request or activation when `"auto"` (or any s
 
 When `mxl_domain_id` is staged or activated with `"auto"`, the Sender or Receiver SHOULD first use any available local or contextual information (for example a single configured MXL Domain) to determine the MXL Domain id.
 
-If the MXL Domain id cannot be determined by such means, the Sender or Receiver SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
+If the MXL Domain ID cannot be determined by such means, the Sender or Receiver SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
 
 #### Sender Transport Parameters
 
 - `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured. It MUST support `"auto"` where the Sender resolves the MXL Flow identifier (for example when only one Flow applies, so a Controller need not supply the identifier when staging or activating). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
-- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system. It MUST support `"auto"` where a single MXL Domain applies or the Sender resolves the MXL Domain without a Controller supplied id. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
+- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system. It MUST support `"auto"` where a single MXL Domain applies or the Sender resolves the MXL Domain without a Controller supplied ID. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
 
 #### Receiver Transport Parameters
 
 - `mxl_flow_id` MUST accept `null` for an unconfigured Receiver as the identifier may be unknown until the Receiver has been staged or activated, and MUST NOT accept `"auto"`.
-- `mxl_domain_id` MUST accept `null` for an unconfigured Receiver and MUST support `"auto"` where the Receiver is able to automatically determine the domain. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Receiver MUST reject the request or activation.
+- `mxl_domain_id` MUST accept `null` for an unconfigured Receiver and MUST support `"auto"` where the Receiver is able to automatically determine the Domain. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Receiver MUST reject the request or activation.
 
 Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-04 Flow resource.
 

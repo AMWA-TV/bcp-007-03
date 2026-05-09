@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "mxl_domain_id": {
-      "description": "Specifies the MXL Domain ID where the MXL Flow will be located. The Sender lists allowed Domain IDs in the constraints endpoint. Where the domain is not yet determined, implementations use null. MXL Senders accept null where the MXL Domain is unknown a priori in a multi-domain system. MXL Senders support `auto` where the Sender can resolve the domain without a Controller-supplied domain id. Where `auto` cannot be resolved to a valid value for /active in the current operating context, the Sender may reject the request or activation. The constraints endpoint does not list `auto` as an available option.",
+      "description": "Specifies the MXL Domain ID where the MXL Flow will be located. The Sender lists allowed Domain IDs in the constraints endpoint. Where the Domain is not yet determined, implementations use null. MXL Senders accept null where the MXL Domain is unknown a priori in a multi-domain system. MXL Senders support `auto` where the Sender can resolve the Domain without a Controller-supplied Domain ID. Where `auto` cannot be resolved to a valid value for /active in the current operating context, the Sender may reject the request or activation. The constraints endpoint does not list `auto` as an available option.",
       "anyOf": [
         {
           "type": "null"
