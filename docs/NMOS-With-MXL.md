@@ -32,11 +32,11 @@ Examples of Source resources are provided in [Examples](../examples/).
 
 ### Flows
 
-An MXL Flow resource MUST set the `format` attribute to a value specified in the [NMOS formats parameter register][].
+An Flow resource MUST set the `format` attribute to a value specified in the [NMOS formats parameter register][].
 
-An MXL Flow resource MUST set the `media_type` attribute to a value specified in the [NMOS media types parameter register][].
+An Flow resource MUST set the `media_type` attribute to a value specified in the [NMOS media types parameter register][].
 
-Typical values used by MXL Flow resources for the `media_type` attribute include but are not limited to:
+Typical values used by Flow resources for the `media_type` attribute include but are not limited to:
 
 * `video/v210`
 * `video/v210a`
@@ -80,7 +80,7 @@ Typical values used by MXL Receiver resources for the `media_types` attribute in
 * `audio/float32`
 * `video/smpte291`
 
-The Receiver MUST express its limitations or preferences regarding the flows that it supports consuming by declaring Receiver Capabilities in accordance with the [BCP-004-01][] specification. The Receiver SHOULD express its capabilities as precisely as possible, to enable a Controller to determine, with high confidence, the Receiver's compatibility with available MXL flows. It is not always practical for the parameter constraints to enumerate every type of flow a Receiver can or cannot consume; however, they SHOULD describe as many commonly used operating points as practical, along with any preferences.
+The Receiver MUST express its limitations or preferences regarding the MXL Flows that it supports consuming by declaring Receiver Capabilities in accordance with the [BCP-004-01][] specification. The Receiver SHOULD express its capabilities as precisely as possible, to enable a Controller to determine, with high confidence, the Receiver's compatibility with available MXL Flows. It is not always practical for the parameter constraints to enumerate every type of MXL Flow a Receiver can or cannot consume; however, they SHOULD describe as many commonly used operating points as practical, along with any preferences.
 
 The Receiver MUST use the `constraint_sets` parameter within the `caps` object to describe supported combinations of parameters, using the parameter constraints defined in the [Capabilities Register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers. The full details are described in [BCP-004-01][] NMOS Receiver Capabilities.
 
@@ -102,8 +102,8 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 
 | Name           | Description                                                                                                                                                                                                                                  |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mxl_domain_id`| Specifies the MXL domain id where the MXL flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
-| `mxl_flow_id`  | Specifies the MXL flow id which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
+| `mxl_domain_id`| Specifies the MXL Domain ID where the MXL Flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
+| `mxl_flow_id`  | Specifies the MXL Flow ID which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
 
 MXL Senders and Receivers MUST NOT allow the special value `auto` for `mxl_domain_id` or `mxl_flow_id`.
 
@@ -125,10 +125,10 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 ## MXL Domain volume and identity mapping
 
-The base folder where MXL flows are stored is called an MXL domain.
-Multiple MXL domains can co-exist on the same host.  
-MXL domains are mapped to media functions at deployment time through volume mapping.
-This means that the path where a domain folder is located inside a container could be different from the path where the domain folder is located on the host.
+The base directory where MXL Flows are stored is called an MXL Domain.
+Multiple MXL Domains can co-exist on the same host.  
+MXL Domains are mapped to media functions at deployment time through volume mapping.
+This means that the path where an MXL Domain directory is located inside a container could be different from the path where the MXL Domain directory is located on the host.
 
 Consider the following simple deployment example where we have two mxl-writer media functions and an mxl-reader media function.
 
@@ -159,19 +159,20 @@ services:
         read_only: true
 ```
 
-Without applying any strong identity to the MXL domains the reader media function cannot resolve `domain_a` and `domain_b` as being the same as `domain_1` and `domain_2`.
+Without applying any strong identity to the MXL Domains the reader media function cannot resolve `domain_a` and `domain_b` as being the same as `domain_1` and `domain_2`.
 
-All MXL domains MUST hold a definition json file `domain_def.json` in their host directory.
-The domain definition json object MUST respect the [MXL Domain definition schema](../APIs/schemas/mxl_domain_definition.json) where the following attributes are defined as:
+All MXL Domains MUST hold a definition json file `domain_def.json` in their host directory.
+The MXL Domain definition json object MUST respect the [MXL Domain definition schema](../APIs/schemas/mxl_domain_definition.json) where the following attributes are defined as:
 
-* id - the unique identity of the domain as a UUID
-* label - the label of the domain as a string
-* description - optional description of the domain as a string
+* id - unique identity of the MXL Domain as a UUID
+* label - label of the MXL Domain as a string
+* description - description of the MXL Domain as a string
+* tags - tags object for the MXL Domain
 
-An example MXL domain definition is provided in [Examples](../examples/).
+An example MXL Domain definition is provided in [Examples](../examples/).
 
-It is assumed media functions will be configured by an orchestrator with the MXL domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL domain for the `domain_def.json` file.
-The identity of each domain travels with each domain mapping inside each media function, meaning media functions can resolve domains to the same identity even when they have been mapped to different local paths inside the media function.
+It is assumed media functions will be configured by an orchestrator with the MXL Domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL Domain for the `domain_def.json` file.
+The identity of each MXL Domain travels with each MXL Domain mapping inside each media function, meaning media functions can resolve MXL Domains to the same identity even when they have been mapped to different local paths inside the media function.
 
 Given the above deployment example, this is the local path structure inside each of the media functions:
 
@@ -191,7 +192,10 @@ mxl-holder/domain-01/domain_def.json
 {
     "id": "1ac254d9-a5eb-475f-a2b6-3d02a5cfbc82",
     "label": "Red Studio",
-    "description": "MXL Red Studio domain"
+    "description": "MXL Red Studio MXL Domain",
+    "tags": {
+        "urn:x-nmos:tag:grouphint/v1.0": ["Red Studio"]
+    }
 }
 ```
 
@@ -211,7 +215,10 @@ my-mxl-holder/domain-02/domain_def.json
 {
     "id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
     "label": "Blue Studio",
-    "description": "MXL Blue Studio domain"
+    "description": "MXL Blue Studio MXL Domain",
+    "tags": {
+        "urn:x-nmos:tag:grouphint/v1.0": ["Blue Studio"]
+    }
 }
 ```
 
@@ -235,7 +242,10 @@ base-mxl-holder/domain-a/domain_def.json
 {
     "id": "1ac254d9-a5eb-475f-a2b6-3d02a5cfbc82",
     "label": "Red Studio",
-    "description": "MXL Red Studio domain"
+    "description": "MXL Red Studio MXL Domain",
+    "tags": {
+        "urn:x-nmos:tag:grouphint/v1.0": ["Red Studio"]
+    }
 }
 ```
 
@@ -245,21 +255,24 @@ base-mxl-holder/domain-b/domain_def.json
 {
     "id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
     "label": "Blue Studio",
-    "description": "MXL Blue Studio domain"
+    "description": "MXL Blue Studio MXL Domain",
+    "tags": {
+        "urn:x-nmos:tag:grouphint/v1.0": ["Blue Studio"]
+    }
 }
 ```
 
-where `domain-a` and `domain-b` inside the reader-media-function resolve to the same identity as `domain-01` and `domain-02` mapped in the writer media functions.
+where `/domain-a` and `/domain-b` inside the reader media function resolve to the same identity as `/domain-1` and `/domain-2` mapped in the writer media functions.
 
 ## Controllers
 
-A controller MUST be able to discover MXL Senders and MXL Receivers by using the IS-04 Query API.
+A Controller MUST be able to discover MXL Senders and MXL Receivers by using the IS-04 Query API.
 
-A controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
+A Controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
 
-When a controller makes a `PATCH` request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
+When a Controller makes a `PATCH` request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
 
-Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the flow compatibility between MXL Senders and MXL Receivers.
+Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the MXL Flow compatibility between MXL Senders and MXL Receivers.
 
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
@@ -267,5 +280,5 @@ Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order
 [IS-04]: https://specs.amwa.tv/is-04/
 [IS-05]: https://specs.amwa.tv/is-05/
 [BCP-004-01]: https://specs.amwa.tv/bcp-004-01/ "AMWA BCP-004-01 NMOS Receiver Capabilities"
-[NMOS formats parameter register]:  https://specs.amwa.tv/nmos-parameter-registers/branches/main/formats/ "NMOS Formats"
-[NMOS media types parameter register]:  https://specs.amwa.tv/nmos-parameter-registers/branches/main/media-types/ "NMOS Media Types"
+[NMOS formats parameter register]: https://specs.amwa.tv/nmos-parameter-registers/branches/main/formats/ "NMOS Formats"
+[NMOS media types parameter register]: https://specs.amwa.tv/nmos-parameter-registers/branches/main/media-types/ "NMOS Media Types"
