@@ -3,6 +3,6 @@
     "label": "Domain A",
     "description": "MXL Domain A",
     "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Studio A"]
+        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:A"]
     }
 }

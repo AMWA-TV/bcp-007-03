@@ -194,7 +194,7 @@ mxl-holder/domain-01/domain_def.json
     "label": "Red Studio",
     "description": "MXL Red Studio MXL Domain",
     "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Red Studio"]
+        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Red"]
     }
 }
 ```
@@ -217,7 +217,7 @@ my-mxl-holder/domain-02/domain_def.json
     "label": "Blue Studio",
     "description": "MXL Blue Studio MXL Domain",
     "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Blue Studio"]
+        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Blue"]
     }
 }
 ```
@@ -244,7 +244,7 @@ base-mxl-holder/domain-a/domain_def.json
     "label": "Red Studio",
     "description": "MXL Red Studio MXL Domain",
     "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Red Studio"]
+        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Red"]
     }
 }
 ```
@@ -257,7 +257,7 @@ base-mxl-holder/domain-b/domain_def.json
     "label": "Blue Studio",
     "description": "MXL Blue Studio MXL Domain",
     "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Blue Studio"]
+        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Blue"]
     }
 }
 ```
