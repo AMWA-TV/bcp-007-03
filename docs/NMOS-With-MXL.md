@@ -117,7 +117,7 @@ A Sender or Receiver MUST reject a request or activation when `"auto"` (or any s
 
 When `mxl_domain_id` is staged or activated with `"auto"`, the Sender or Receiver SHOULD first use any available local or contextual information (for example a single configured MXL Domain) to determine the MXL Domain id.
 
-If the MXL Domain ID cannot be determined by such means, the Sender or Receiver SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
+If a Receiver cannot determine the MXL Domain ID by such means, it SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
 
 #### Sender Transport Parameters
 
