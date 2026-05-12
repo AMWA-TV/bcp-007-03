@@ -109,9 +109,9 @@ Where a value is not yet determined, implementations MUST use `null`, consistent
 
 [IS-05 *APIs: Server Side Implementation*, *Use of auto*][IS-05 use of auto] allows `"auto"` in `/staged` so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list `"auto"` as an option via the `/constraints` endpoint.
 
-Support for `"auto"` indicates that an implementation supports automatic-selection semantics for that parameter in `/staged`. It does not guarantee that every request or activation can be activated.
+Support for `"auto"` indicates that an implementation supports automatic-selection semantics for that parameter in `/staged`. It does not guarantee that every staged configuration can be activated.
 
-A Sender or Receiver MUST reject a request or activation when `"auto"` (or any supplied parameter value) is used but cannot be resolved to a valid concrete value for `/active` under current operational conditions. This includes, but is not limited to, cases where no valid MXL Domain or MXL Flow can be selected, where a referenced MXL Domain or MXL Flow is unavailable or unreachable, or where the submitted parameter combination is not operationally satisfiable.
+A Sender or Receiver MUST reject a request or activation when `"auto"` (or any supplied parameter value) is used but the Sender or Receiver is not capable of resolving this to a valid concrete value.
 
 #### Automatic resolution of `mxl_domain_id`
 
@@ -143,7 +143,7 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL write operation.
 
-A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation.
+A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation and SHOULD delete the associated MXL Flow from the MXL Domain.
 
 ## MXL Domain volume and identity mapping
 
@@ -192,7 +192,7 @@ The domain definition json object MUST respect the [MXL Domain definition schema
 
 An example MXL domain definition is provided in [Examples](../examples/).
 
-It is assumed media functions will be configured by an orchestrator with the MXL domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL domain for the `domain_def.json` file.
+It is assumed that media functions will be configured by an orchestrator with the MXL domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL domain for the `domain_def.json` file.
 The identity of each domain travels with each domain mapping inside each media function, meaning media functions can resolve domains to the same identity even when they have been mapped to different local paths inside the media function.
 
 Given the above deployment example, this is the local path structure inside each of the media functions:
