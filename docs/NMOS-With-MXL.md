@@ -102,16 +102,38 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 
 | Name           | Description                                                                                                                                                                                                                                  |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mxl_domain_id`| Specifies the MXL domain id where the MXL flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
-| `mxl_flow_id`  | Specifies the MXL flow id which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
+| `mxl_domain_id`| Specifies the MXL Domain ID where the MXL Flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
+| `mxl_flow_id`  | Specifies the MXL Flow ID which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
 
-MXL Senders and Receivers MUST NOT allow the special value `auto` for `mxl_domain_id` or `mxl_flow_id`.
+Where a value is not yet determined, implementations MUST use `null`, consistent with [IS-05 *APIs: Server Side Implementation*][IS-05 uninitialised].
+
+[IS-05 *APIs: Server Side Implementation*, *Use of auto*][IS-05 use of auto] allows `"auto"` in `/staged` so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list `"auto"` as an option via the `/constraints` endpoint.
+
+Support for `"auto"` indicates that an implementation supports automatic-selection semantics for that parameter in `/staged`. It does not guarantee that every staged configuration can be activated.
+
+A Sender or Receiver MUST reject a request or activation when `"auto"` (or any supplied parameter value) is used but the Sender or Receiver is not capable of resolving this to a valid concrete value.
+
+#### Automatic resolution of `mxl_domain_id`
+
+When `mxl_domain_id` is staged or activated with `"auto"`, the Sender or Receiver SHOULD first use any available local or contextual information (for example a single configured MXL Domain) to determine the MXL Domain id.
+
+If a Receiver cannot determine the MXL Domain ID by such means, it SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
+
+#### Sender Transport Parameters
+
+- `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured. It MUST support `"auto"` where the Sender resolves the MXL Flow identifier (for example when that ID is provided via configuration or is randomly generated, so a Controller need not supply the identifier when staging or activating). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
+- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system. It MUST support `"auto"` where a single MXL Domain applies or the Sender resolves the MXL Domain without a Controller supplied ID. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
+
+#### Receiver Transport Parameters
+
+- `mxl_flow_id` MUST accept `null` for an unconfigured Receiver as the identifier may be unknown until the Receiver has been staged or activated, and MUST NOT accept `"auto"`.
+- `mxl_domain_id` MUST accept `null` for an unconfigured Receiver and MUST support `"auto"` where the Receiver is able to automatically determine the Domain. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Receiver MUST reject the request or activation.
 
 Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-04 Flow resource.
 
 ### Receivers
 
-A `PATCH` request on the **/staged** endpoint of an MXL IS-05 Receiver is not expected to contain a transport file in the `transport_file` attribute.
+A request on the **/staged** endpoint of an MXL IS-05 Receiver is not expected to contain a transport file in the `transport_file` attribute.
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL read operation.
 
@@ -121,7 +143,7 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL write operation.
 
-A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation.
+A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation and SHOULD delete the associated MXL Flow from the MXL Domain.
 
 ## MXL Domain volume and identity mapping
 
@@ -170,7 +192,7 @@ The domain definition json object MUST respect the [MXL Domain definition schema
 
 An example MXL domain definition is provided in [Examples](../examples/).
 
-It is assumed media functions will be configured by an orchestrator with the MXL domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL domain for the `domain_def.json` file.
+It is assumed that media functions will be configured by an orchestrator with the MXL domain's location on the local filesystem, allowing them to discover available mapped domains, and their identity, by checking the contents of each MXL domain for the `domain_def.json` file.
 The identity of each domain travels with each domain mapping inside each media function, meaning media functions can resolve domains to the same identity even when they have been mapped to different local paths inside the media function.
 
 Given the above deployment example, this is the local path structure inside each of the media functions:
@@ -257,7 +279,7 @@ A controller MUST be able to discover MXL Senders and MXL Receivers by using the
 
 A controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
 
-When a controller makes a `PATCH` request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
+When a controller makes a request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
 
 Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the flow compatibility between MXL Senders and MXL Receivers.
 
@@ -266,6 +288,8 @@ Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order
 [MXL]: https://tech.ebu.ch/dmf/mxl
 [IS-04]: https://specs.amwa.tv/is-04/
 [IS-05]: https://specs.amwa.tv/is-05/
+[IS-05 uninitialised]: https://specs.amwa.tv/is-05/releases/v1.1.2/docs/APIs_-_Server_Side_Implementation.html#uninitialised-senders-and-receivers "IS-05 APIs: Server Side Implementation — Uninitialised Senders and Receivers"
+[IS-05 use of auto]: https://specs.amwa.tv/is-05/releases/v1.1.2/docs/APIs_-_Server_Side_Implementation.html#use-of-auto "IS-05 APIs: Server Side Implementation — Use of auto"
 [BCP-004-01]: https://specs.amwa.tv/bcp-004-01/ "AMWA BCP-004-01 NMOS Receiver Capabilities"
 [NMOS formats parameter register]:  https://specs.amwa.tv/nmos-parameter-registers/branches/main/formats/ "NMOS Formats"
 [NMOS media types parameter register]:  https://specs.amwa.tv/nmos-parameter-registers/branches/main/media-types/ "NMOS Media Types"
