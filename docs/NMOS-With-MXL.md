@@ -193,9 +193,7 @@ mxl-holder/domain-01/domain_def.json
     "id": "1ac254d9-a5eb-475f-a2b6-3d02a5cfbc82",
     "label": "Red Studio",
     "description": "MXL Red Studio MXL Domain",
-    "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Red"]
-    }
+    "tags": {}
 }
 ```
 
@@ -216,9 +214,7 @@ my-mxl-holder/domain-02/domain_def.json
     "id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
     "label": "Blue Studio",
     "description": "MXL Blue Studio MXL Domain",
-    "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Blue"]
-    }
+    "tags": {}
 }
 ```
 
@@ -243,9 +239,7 @@ base-mxl-holder/domain-a/domain_def.json
     "id": "1ac254d9-a5eb-475f-a2b6-3d02a5cfbc82",
     "label": "Red Studio",
     "description": "MXL Red Studio MXL Domain",
-    "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Red"]
-    }
+    "tags": {}
 }
 ```
 
@@ -256,9 +250,7 @@ base-mxl-holder/domain-b/domain_def.json
     "id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
     "label": "Blue Studio",
     "description": "MXL Blue Studio MXL Domain",
-    "tags": {
-        "urn:x-nmos:tag:grouphint/v1.0": ["Studio:Blue"]
-    }
+    "tags": {}
 }
 ```
 
