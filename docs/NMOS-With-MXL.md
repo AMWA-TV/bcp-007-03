@@ -111,7 +111,7 @@ Where a value is not yet determined, implementations MUST use `null`, consistent
 
 Support for `"auto"` indicates that an implementation supports automatic-selection semantics for that parameter in `/staged`. It does not guarantee that every staged configuration can be activated.
 
-A Sender or Receiver MUST reject a request or activation when `"auto"` (or any supplied parameter value) is used but the Sender or Receiver is not capable of resolving this to a valid concrete value.
+A Sender or Receiver MUST reject a request or activation when `"auto"` (or any supplied parameter value) is used but the Sender or Receiver is not capable of resolving this to a valid value.
 
 #### Automatic resolution of `mxl_domain_id`
 
@@ -143,7 +143,7 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL write operation.
 
-A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation and SHOULD delete the associated MXL Flow from the MXL Domain.
+A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation and it is expected that the associated MXL Flow will be deleted from the MXL Domain.
 
 ## MXL Domain volume and identity mapping
 
