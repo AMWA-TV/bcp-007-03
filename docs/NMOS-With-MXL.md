@@ -133,7 +133,7 @@ Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-
 
 ### Receivers
 
-A request on the **/staged** endpoint of an MXL IS-05 Receiver MUST NOT include a transport file. A Receiver MUST accept a staged request that either omits the `transport_file` attribute or set both `data` and `type` within the `transport_file` to `null`.
+A staging or activation request on an MXL IS-05 Receiver MUST NOT include a transport file. A Receiver MUST accept a request that either omits the `transport_file` attribute or sets both `data` and `type` within the `transport_file` to `null`.
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL read operation.
 
