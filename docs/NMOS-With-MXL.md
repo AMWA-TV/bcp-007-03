@@ -133,7 +133,7 @@ Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-
 
 ### Receivers
 
-A request on the **/staged** endpoint of an MXL IS-05 Receiver is not expected to contain a transport file in the `transport_file` attribute.
+A request on the **/staged** endpoint of an MXL IS-05 Receiver MUST NOT include a transport file. A Receiver MUST accept a staged request that either omits the `transport_file` attribute or set both `data` and `type` within the `transport_file` to `null`.
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL read operation.
 
@@ -143,7 +143,7 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL write operation.
 
-A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation and it is expected that the associated MXL Flow will be deleted from the MXL Domain.
+A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation.
 
 ## MXL Domain volume and identity mapping
 
@@ -284,7 +284,7 @@ A Controller MUST be able to discover MXL Senders and MXL Receivers by using the
 
 A Controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
 
-When a Controller makes a request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
+When a Controller makes a request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide a `transport_file`. The Controller MUST either omit the `transport_file` attribte or set both the `data` and `type` within `transport_file` to `null`.
 
 Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the MXL Flow compatibility between MXL Senders and MXL Receivers.
 
