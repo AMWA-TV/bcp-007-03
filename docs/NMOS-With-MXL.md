@@ -284,7 +284,7 @@ A Controller MUST be able to discover MXL Senders and MXL Receivers by using the
 
 A Controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
 
-When a Controller makes a request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide a `transport_file`. The Controller MUST either omit the `transport_file` attribte or set both the `data` and `type` within `transport_file` to `null`.
+When a Controller makes a staging or activation request on an MXL IS-05 Receiver it MUST NOT provide a `transport_file`. The Controller MUST either omit the `transport_file` attribute or set both the `data` and `type` within `transport_file` to `null`.
 
 Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the MXL Flow compatibility between MXL Senders and MXL Receivers.
 
