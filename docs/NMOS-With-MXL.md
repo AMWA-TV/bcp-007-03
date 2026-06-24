@@ -111,7 +111,9 @@ Where a value is not yet determined, implementations MUST use `null`, consistent
 
 Support for `"auto"` indicates that an implementation supports automatic-selection semantics for that parameter in `/staged`. It does not guarantee that every staged configuration can be activated.
 
-A Sender or Receiver MUST reject a request or activation when `"auto"` (or any supplied parameter value) is used but the Sender or Receiver is not capable of resolving this to a valid concrete value.
+A Sender or Receiver MUST reject a staging request that supplies a parameter value which is invalid against the schema and constraints, or which cannot be applied in the current operating context (for example, an `mxl_domain_id` that refers to an MXL Domain the Node is not capable of accessing).
+
+For an immediate activation, if `"auto"` cannot be resolved to a valid value the request MUST respond with an HTTP 500 error. For a scheduled activation, Controllers SHOULD verify the outcome after the expected activation time by inspecting `/active` and monitoring IS-04 resource versions, consistent with [IS-05 Scheduled Activations](https://specs.amwa.tv/is-05/releases/v1.1.2/docs/Behaviour.html#scheduled-activations).
 
 #### Automatic resolution of `mxl_domain_id`
 
@@ -133,7 +135,7 @@ Note that the `mxl_flow_id` need not be the same as the ID of the associated IS-
 
 ### Receivers
 
-A request on the **/staged** endpoint of an MXL IS-05 Receiver is not expected to contain a transport file in the `transport_file` attribute.
+A staging or activation request on an MXL IS-05 Receiver MUST NOT include a transport file. A Receiver MUST accept a request that either omits the `transport_file` attribute or sets both `data` and `type` within the `transport_file` to `null`.
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL read operation.
 
@@ -143,7 +145,7 @@ A successful activation resulting in `master_enable` becoming `false` MUST stop 
 
 A successful activation resulting in `master_enable` becoming `true` MUST start the MXL write operation.
 
-A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation and SHOULD delete the associated MXL Flow from the MXL Domain.
+A successful activation resulting in `master_enable` becoming `false` MUST stop the MXL write operation.
 
 ## MXL Domain volume and identity mapping
 
@@ -284,7 +286,7 @@ A Controller MUST be able to discover MXL Senders and MXL Receivers by using the
 
 A Controller MUST be able to connect an MXL Receiver to an MXL Sender by using the IS-05 Connection API.
 
-When a Controller makes a request on the **/staged** endpoint of an MXL IS-05 Receiver it MUST NOT provide the `transport_file` attribute.
+When a Controller makes a staging or activation request on an MXL IS-05 Receiver it MUST NOT provide a `transport_file`. The Controller MUST either omit the `transport_file` attribute or set both the `data` and `type` within `transport_file` to `null`.
 
 Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order to evaluate the MXL Flow compatibility between MXL Senders and MXL Receivers.
 
