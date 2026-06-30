@@ -15,8 +15,7 @@
           "const": "auto"
         },
         {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "mxl_uuid.json"
         }
       ]
     },
@@ -27,8 +26,7 @@
           "type": "null"
         },
         {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "mxl_uuid.json"
         }
       ]
     }

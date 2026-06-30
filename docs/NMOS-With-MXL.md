@@ -105,6 +105,8 @@ MXL Senders and Receivers MUST always use a single set of constraints in the con
 | `mxl_domain_id`| Specifies the MXL Domain ID where the MXL Flow will be located. The Sender and Receiver list allowed values in the `constraints` endpoint.               |
 | `mxl_flow_id`  | Specifies the MXL Flow ID which will be used for the write or read operation. The Sender and Receiver list allowed values in the `constraints` endpoint. |
 
+Where a UUID value is used, `mxl_domain_id` and `mxl_flow_id` MUST conform to the [MXL UUID schema](../APIs/schemas/mxl_uuid.json), matching the canonical textual UUID form defined in [MXL Addressability][MXL addressability].
+
 Where a value is not yet determined, implementations MUST use `null`, consistent with [IS-05 *APIs: Server Side Implementation*][IS-05 uninitialised].
 
 [IS-05 *APIs: Server Side Implementation*, *Use of auto*][IS-05 use of auto] allows `"auto"` in `/staged` so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list `"auto"` as an option via the `/constraints` endpoint.
@@ -188,7 +190,7 @@ Without applying any strong identity to the MXL Domains the reader media functio
 All MXL Domains MUST hold a definition json file `domain_def.json` in their host directory.
 The MXL Domain definition json object MUST respect the [MXL Domain definition schema](../APIs/schemas/mxl_domain_definition.json) where the following attributes are defined as:
 
-* id - unique identity of the MXL Domain as a UUID
+* id - unique identity of the MXL Domain as an [MXL UUID](../APIs/schemas/mxl_uuid.json)
 * label - label of the MXL Domain as a string
 * description - description of the MXL Domain as a string
 * tags - tags object for the MXL Domain
@@ -293,6 +295,7 @@ Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism in order
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
 [MXL]: https://tech.ebu.ch/dmf/mxl
+[MXL addressability]: https://github.com/dmf-mxl/mxl/blob/main/docs/Addressability.md#uuid-format "MXL Addressability — UUID Format"
 [IS-04]: https://specs.amwa.tv/is-04/
 [IS-05]: https://specs.amwa.tv/is-05/
 [IS-05 uninitialised]: https://specs.amwa.tv/is-05/releases/v1.1.2/docs/APIs_-_Server_Side_Implementation.html#uninitialised-senders-and-receivers "IS-05 APIs: Server Side Implementation — Uninitialised Senders and Receivers"
