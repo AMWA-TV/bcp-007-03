@@ -188,7 +188,7 @@ Without applying any strong identity to the MXL Domains the reader media functio
 All MXL Domains MUST hold a definition json file `domain_def.json` in their host directory.
 The MXL Domain definition json object MUST respect the [MXL Domain definition schema](../APIs/schemas/mxl_domain_definition.json) where the following attributes are defined as:
 
-* id - unique identity of the MXL Domain as a UUID
+* id - unique identity of the MXL Domain as an [MXL UUID](../APIs/schemas/mxl_uuid.json)
 * label - label of the MXL Domain as a string
 * description - description of the MXL Domain as a string
 * tags - tags object for the MXL Domain

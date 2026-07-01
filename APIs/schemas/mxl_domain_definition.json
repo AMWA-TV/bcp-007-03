@@ -5,15 +5,8 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": [
-        "string"
-      ],
       "description": "Specifies the MXL domain id.",
-      "anyOf": [
-        {
-          "format": "uuid"
-        }
-      ]
+      "$ref": "mxl_uuid.json"
     },
     "label": {
       "type": [

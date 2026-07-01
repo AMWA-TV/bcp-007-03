@@ -15,8 +15,7 @@
           "const": "auto"
         },
         {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "mxl_uuid.json"
         }
       ]
     },
@@ -31,8 +30,7 @@
           "const": "auto"
         },
         {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "mxl_uuid.json"
         }
       ]
     }
