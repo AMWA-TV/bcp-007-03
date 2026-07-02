@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft/2019-09/schema#",
-  "description": "MXL Domain definition schema",
+  "description": "Schema for MXL domain_def.json file",
   "title": "MXL Domain definition",
   "type": "object",
   "properties": {
@@ -9,15 +9,11 @@
       "$ref": "mxl_uuid.json"
     },
     "label": {
-      "type": [
-        "string"
-      ],
+      "type": ["string"],
       "description": "Specifies the MXL domain label."
     },
     "description": {
-      "type": [
-        "string"
-      ],
+      "type": ["string"],
       "description": "Specifies the MXL domain description."
     },
     "tags": {
@@ -33,11 +29,6 @@
       }
     }
   },
-  "required": [
-    "id",
-    "label",
-    "description",
-    "tags"
-  ],
+  "required": ["id", "label", "description", "tags"],
   "additionalProperties": true
 }
