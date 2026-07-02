@@ -9,11 +9,15 @@
       "$ref": "mxl_uuid.json"
     },
     "label": {
-      "type": ["string"],
+      "type": [
+        "string"
+      ],
       "description": "Specifies the MXL domain label."
     },
     "description": {
-      "type": ["string"],
+      "type": [
+        "string"
+      ],
       "description": "Specifies the MXL domain description."
     },
     "tags": {
@@ -29,6 +33,11 @@
       }
     }
   },
-  "required": ["id", "label", "description", "tags"],
+  "required": [
+    "id",
+    "label",
+    "description",
+    "tags"
+  ],
   "additionalProperties": true
 }
