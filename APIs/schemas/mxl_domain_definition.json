@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft/2019-09/schema#",
-  "description": "MXL Domain definition schema",
+  "description": "Schema for MXL domain_def.json file",
   "title": "MXL Domain definition",
   "type": "object",
   "properties": {
