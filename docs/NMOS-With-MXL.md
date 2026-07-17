@@ -121,7 +121,7 @@ When `mxl_domain_id` is staged or activated with `"auto"`, the Sender or Receive
 
 If a Receiver cannot determine the MXL Domain ID by such means, it SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
 
-As MXL Flows may be replicated across MXL Domains, a Sender and Receiver connected by the same `mxl_flow_id` may use different `mxl_domain_id` values.
+As MXL Flows may be replicated across MXL Domains, it is possible for a Sender and Receiver connected by the same `mxl_flow_id` to have different `mxl_domain_id` values.
 
 #### Sender Transport Parameters
 
