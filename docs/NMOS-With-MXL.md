@@ -121,6 +121,8 @@ When `mxl_domain_id` is staged or activated with `"auto"`, the Sender or Receive
 
 If a Receiver cannot determine the MXL Domain ID by such means, it SHOULD enumerate or query all MXL Domains available to the Node and search for an MXL Flow that satisfies the connection by matching the staged `mxl_flow_id`.
 
+As MXL Flows may be replicated across MXL Domains, it is possible for a Sender and Receiver connected by the same `mxl_flow_id` to have different `mxl_domain_id` values.
+
 #### Sender Transport Parameters
 
 - `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured. It MUST support `"auto"` where the Sender resolves the MXL Flow identifier (for example when that ID is provided via configuration or is randomly generated, so a Controller need not supply the identifier when staging or activating). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
