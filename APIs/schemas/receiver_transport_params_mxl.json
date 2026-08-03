@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Describes MXL transport parameters. The constraints in this schema are minimum constraints, but may be further constrained at the constraints endpoint. Receivers support at least the `mxl_domain_id` and `mxl_flow_id` parameters.",
   "title": "MXL Receiver Transport Parameters",
   "type": "object",
@@ -12,7 +12,7 @@
         },
         {
           "type": "string",
-          "const": "auto"
+          "pattern": "^auto$"
         },
         {
           "$ref": "mxl_uuid.json"
