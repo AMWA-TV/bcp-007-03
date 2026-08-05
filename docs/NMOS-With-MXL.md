@@ -125,8 +125,8 @@ As MXL Flows may be replicated across MXL Domains, it is possible for a Sender a
 
 #### Sender Transport Parameters
 
-- `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured. It MUST support `"auto"` where the Sender resolves the MXL Flow identifier (for example when that ID is provided via configuration or is randomly generated, so a Controller need not supply the identifier when staging or activating). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
-- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system. It MUST support `"auto"` where a single MXL Domain applies or the Sender resolves the MXL Domain without a Controller supplied ID. Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
+- `mxl_flow_id` MUST accept `null`, including where the MXL Flow is not yet configured. It MUST support `"auto"` where the Sender resolves the MXL Flow identifier (for example when that ID is provided via configuration, chosen from constraints or is randomly generated, so a Controller need not supply the identifier when staging or activating). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
+- `mxl_domain_id` MUST accept `null` including where the MXL Domain is unknown a priori in a multi-domain system. It MUST support `"auto"` where a single MXL Domain applies or the Sender resolves the MXL Domain without a Controller supplied ID (for example when that ID is provided via configuration or chosen from constraints). Where `"auto"` is used and cannot be resolved to a valid value for `/active` in the current operating context, the Sender MUST reject the request or activation.
 
 #### Receiver Transport Parameters
 
