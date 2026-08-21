@@ -1,5 +1,5 @@
 name: Documentation
-run-name: ${{ github.event_name == 'push' && format('{0} - {1}', github.event.head_commit.message, github.ref_name) || github.event_name == 'release' && format('Release - {0}', github.event.release.tag_name) || format('Documentation - {0}', inputs.ref || github.ref_name) }}
+run-name: ${{ case(github.event_name == 'push', '', github.event_name == 'release', format('Release - {0}', github.event.release.tag_name), format('Documentation - {0}', inputs.ref || github.ref_name)) }}
 
 on:
   push:
@@ -14,6 +14,7 @@ on:
         description: Optional branch or tag to rebuild
         required: false
         default: ''
+
 
 permissions:
   contents: write
