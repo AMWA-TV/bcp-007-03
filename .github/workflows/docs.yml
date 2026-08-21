@@ -1,4 +1,5 @@
 name: Documentation
+run-name: ${{ github.event_name == 'push' && format('{0} - {1}', github.event.head_commit.message, github.ref_name) || github.event_name == 'release' && format('Release - {0}', github.event.release.tag_name) || format('Documentation - {0}', inputs.ref || github.ref_name) }}
 
 on:
   push:
@@ -16,6 +17,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: amwa-documentation-${{ github.repository }}
+  cancel-in-progress: false
 
 jobs:
   docs:

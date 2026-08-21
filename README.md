@@ -1,7 +1,8 @@
 # AMWA BCP-007-03: NMOS Support for MXL
 
 [![Lint Status](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/lint.yml/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/lint.yml)
-[![Render Status](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/docs.yml/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/docs.yml)
+[![Zensical Render Status](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/docs.yml/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/docs.yml)
+[![Legacy Render Status](https://github.com/AMWA-TV/bcp-007-03/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions?query=workflow%3ARender)
 [![License](https://img.shields.io/github/license/AMWA-TV/bcp-007-03)](https://github.com/AMWA-TV/bcp-007-03/blob/HEAD/LICENSE)
 [![Issues](https://img.shields.io/github/issues/AMWA-TV/bcp-007-03)](https://github.com/AMWA-TV/bcp-007-03/issues)
 
