@@ -1,0 +1,18 @@
+{
+    "caps": {},
+    "clock_name": "clk0",
+    "description": "MXL video source",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:video",
+    "grain_rate": {
+        "denominator": 1,
+        "numerator": 60
+    },
+    "id": "1100764e-6ce9-5568-8333-c8a66547f1dc",
+    "label": "MXL video source",
+    "parents": [
+        "46d7bbb2-eec2-5209-8215-90af5ccdd5a4"
+    ],
+    "tags": {},
+    "version": "1773758086:505760400"
+}

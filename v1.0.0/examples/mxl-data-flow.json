@@ -1,0 +1,24 @@
+{
+    "DID_SDID": [
+        {
+            "DID": "0x60",
+            "SDID": "0x60"
+        }
+    ],
+    "description": "MXL data flow",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:data",
+    "grain_rate": {
+        "denominator": 1,
+        "numerator": 60
+    },
+    "id": "39a10a35-d1cf-5a79-91a0-2e3d257cd17a",
+    "label": "MXL data flow",
+    "media_type": "video/smpte291",
+    "parents": [
+        "db19c592-d911-59bc-b927-912f6bd1e2aa"
+    ],
+    "source_id": "a41dbad6-a124-5b2c-a4c6-cdce18cb533e",
+    "tags": {},
+    "version": "1773758086:508760200"
+}

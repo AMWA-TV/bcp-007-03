@@ -1,0 +1,20 @@
+{
+    "caps": {
+        "media_types": [
+            "video/v210"
+        ]
+    },
+    "description": "MXL video receiver",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:video",
+    "id": "61aa4757-7494-5e35-a99f-f6e2a7c25145",
+    "interface_bindings": [],
+    "label": "MXL video receiver",
+    "subscription": {
+        "active": false,
+        "sender_id": null
+    },
+    "tags": {},
+    "transport": "urn:x-nmos:transport:mxl",
+    "version": "1773758086:511757900"
+}
