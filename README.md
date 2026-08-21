@@ -1,7 +1,11 @@
 # AMWA BCP-007-03: NMOS Support for MXL
 
-[![Lint Status](https://github.com/AMWA-TV/bcp-007-03/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions?query=workflow%3ALint)
-[![Render Status](https://github.com/AMWA-TV/bcp-007-03/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions?query=workflow%3ARender)
+[![Lint Status](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/lint.yml/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/lint.yml)
+[![Render Status](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/docs.yml/badge.svg)](https://github.com/AMWA-TV/bcp-007-03/actions/workflows/docs.yml)
+[![License](https://img.shields.io/github/license/AMWA-TV/bcp-007-03)](https://github.com/AMWA-TV/bcp-007-03/blob/HEAD/LICENSE)
+[![Issues](https://img.shields.io/github/issues/AMWA-TV/bcp-007-03)](https://github.com/AMWA-TV/bcp-007-03/issues)
+
+[GitHub repository](https://github.com/AMWA-TV/bcp-007-03)
 
 This repository holds the source for this Specification, part of the family of [Networked Media Open Specifications](https://specs.amwa.tv/nmos) from the [Advanced Media Workflow Association](https://amwa.tv)
 
