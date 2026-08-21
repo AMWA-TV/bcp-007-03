@@ -1,0 +1,15 @@
+{
+    "receiver_id": null,
+    "master_enable": true,
+    "activation": {
+        "mode": "activate_immediate",
+        "requested_time": null,
+        "activation_time": "1755191577:297392784"
+    },
+    "transport_params": [
+        {
+            "mxl_domain_id": "3310f209-9351-47c0-b9a2-14c59b6a4c23",
+            "mxl_flow_id": "83df0a80-92d1-489d-a82b-077e2cef74cd"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "mxl_domain_id": {
+            "enum": [
+                "3310f209-9351-47c0-b9a2-14c59b6a4c23"
+            ]
+        },
+        "mxl_flow_id": {
+            "enum": [
+                "83df0a80-92d1-489d-a82b-077e2cef74cd"
+            ]
+        }
+    }
+]

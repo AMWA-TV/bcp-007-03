@@ -1,0 +1,43 @@
+{
+    "colorspace": "BT709",
+    "components": [
+        {
+            "bit_depth": 10,
+            "height": 1080,
+            "name": "Y",
+            "width": 1920
+        },
+        {
+            "bit_depth": 10,
+            "height": 1080,
+            "name": "Cb",
+            "width": 960
+        },
+        {
+            "bit_depth": 10,
+            "height": 1080,
+            "name": "Cr",
+            "width": 960
+        }
+    ],
+    "description": "MXL video flow",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:video",
+    "frame_height": 1080,
+    "frame_width": 1920,
+    "grain_rate": {
+        "denominator": 1,
+        "numerator": 60
+    },
+    "id": "fb75bb21-36a1-5045-8a3d-a8ee69e913d7",
+    "interlace_mode": "progressive",
+    "label": "MXL video flow",
+    "media_type": "video/v210",
+    "parents": [
+        "b7f57095-aa37-54a4-abe4-22fb8985fd43"
+    ],
+    "source_id": "1100764e-6ce9-5568-8333-c8a66547f1dc",
+    "tags": {},
+    "transfer_characteristic": "SDR",
+    "version": "1773758086:505760400"
+}

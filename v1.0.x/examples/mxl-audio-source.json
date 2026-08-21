@@ -1,0 +1,26 @@
+{
+    "caps": {},
+    "channels": [
+        {
+            "label": "Left Channel",
+            "symbol": "L"
+        },
+        {
+            "label": "Right Channel",
+            "symbol": "R"
+        }
+    ],
+    "clock_name": "clk0",
+    "description": "MXL audio source",
+    "device_id": "6c370020-79bf-5cf6-8f3b-c12e3cb28b5d",
+    "format": "urn:x-nmos:format:audio",
+    "grain_rate": {
+        "denominator": 1,
+        "numerator": 60
+    },
+    "id": "7834e0a9-c0cb-5d0d-b90d-ef1e7bc8728a",
+    "label": "MXL audio source",
+    "parents": [],
+    "tags": {},
+    "version": "1773758086:502135900"
+}
