@@ -1,0 +1,17 @@
+[project]
+site_name = "AMWA BCP-007-03: NMOS Support for MXL"
+site_description = "AMWA Best Common Practice for NMOS Support for MXL"
+site_url = "https://specs.amwa.tv/bcp-007-03/"
+repo_name = "AMWA-TV/bcp-007-03"
+repo_url = "https://github.com/AMWA-TV/bcp-007-03"
+extra_css = ["stylesheets/extra.css"]
+extra_javascript = ["javascripts/json-viewer.js"]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[project.markdown_extensions.toc]
+permalink = false
+
+[project.extra.version]
+provider = "mike"
