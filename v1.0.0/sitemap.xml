@@ -7,34 +7,31 @@
         <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/NMOS-With-MXL/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/constraint-schema/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/constraint-schema/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/constraints-schema-mxl/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/constraints-schema-mxl/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/mxl_domain_definition/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/mxl_domain_definition/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/mxl_uuid/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/mxl_uuid/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/receiver_transport_params_ext/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/receiver_transport_params_ext/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/receiver_transport_params_mxl/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/receiver_transport_params_mxl/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/sender_transport_params_ext/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/sender_transport_params_ext/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/sender_transport_params_mxl/</loc>
+        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/sender_transport_params_mxl/</loc>
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/examples/</loc>
@@ -80,8 +77,5 @@
       </url>
       <url>
         <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/examples/transport-parameters-constraints/</loc>
-      </url>
-      <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.0/images/</loc>
       </url>
 </urlset>

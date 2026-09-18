@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://specs.amwa.tv/new/bcp-007-03/v1.0.0/APIs/schemas/receiver_transport_params_ext/">
+        <link rel="canonical" href="https://specs.amwa.tv/new/bcp-007-03/v1.0.0/schemas/constraints-schema-mxl/">
       
       
-        <link rel="prev" href="../mxl_uuid/">
+        <link rel="prev" href="../constraint-schema/">
       
       
-        <link rel="next" href="../receiver_transport_params_mxl/">
+        <link rel="next" href="../mxl_domain_definition/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="zensical-0.0.57">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
     
     
       
-        <title>receiver_transport_params_ext - AMWA BCP-007-03: NMOS Support for MXL</title>
+        <title>constraints-schema-mxl - AMWA BCP-007-03: NMOS Support for MXL</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.5da3a30f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ce62732f.min.css">
       
       
 
@@ -51,9 +51,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+      <link rel="stylesheet" href="../../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -71,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#receiver_transport_params_ext" class="md-skip">
+        <a href="#constraints-schema-mxl" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="AMWA BCP-007-03: NMOS Support for MXL" class="md-header__button md-logo" aria-label="AMWA BCP-007-03: NMOS Support for MXL" data-md-component="logo">
+    <a href="../.." title="AMWA BCP-007-03: NMOS Support for MXL" class="md-header__button md-logo" aria-label="AMWA BCP-007-03: NMOS Support for MXL" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
@@ -111,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              receiver_transport_params_ext
+              constraints-schema-mxl
             
           </span>
         </div>
@@ -174,7 +176,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="AMWA BCP-007-03: NMOS Support for MXL" class="md-nav__button md-logo" aria-label="AMWA BCP-007-03: NMOS Support for MXL" data-md-component="logo">
+    <a href="../.." title="AMWA BCP-007-03: NMOS Support for MXL" class="md-nav__button md-logo" aria-label="AMWA BCP-007-03: NMOS Support for MXL" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
@@ -204,7 +206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -229,15 +231,60 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Introduction
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Introduction
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../NMOS-With-MXL/" class="md-nav__link">
+      <a href="../../NMOS-With-MXL/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  AMWA BCP-007-03: NMOS With MXL
+  NMOS With MXL
 
     
   </span>
@@ -245,6 +292,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -276,7 +331,7 @@
   <span class="md-ellipsis">
     
   
-  APIs
+  JSON Schemas
 
     
   </span>
@@ -291,81 +346,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-  APIs
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  APIs
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Schemas
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-  Schemas
+  JSON Schemas
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -428,10 +409,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../constraints-schema-mxl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -446,6 +436,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -509,19 +500,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-      
-      
-        
-      
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../receiver_transport_params_ext/" class="md-nav__link">
         
   
   
@@ -536,7 +518,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -629,14 +610,6 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -690,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/" class="md-nav__link">
+      <a href="../../examples/" class="md-nav__link">
         
   
   
@@ -717,14 +690,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/domain_def/" class="md-nav__link">
+      <a href="../../examples/domain_def/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: domain_def.json
+  domain_def.json
 
     
   </span>
@@ -744,14 +717,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-audio-flow/" class="md-nav__link">
+      <a href="../../examples/mxl-audio-flow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-audio-flow.json
+  mxl-audio-flow.json
 
     
   </span>
@@ -771,14 +744,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-audio-receiver/" class="md-nav__link">
+      <a href="../../examples/mxl-audio-receiver/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-audio-receiver.json
+  mxl-audio-receiver.json
 
     
   </span>
@@ -798,14 +771,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-audio-source/" class="md-nav__link">
+      <a href="../../examples/mxl-audio-source/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-audio-source.json
+  mxl-audio-source.json
 
     
   </span>
@@ -825,14 +798,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-data-flow/" class="md-nav__link">
+      <a href="../../examples/mxl-data-flow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-data-flow.json
+  mxl-data-flow.json
 
     
   </span>
@@ -852,14 +825,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-data-receiver/" class="md-nav__link">
+      <a href="../../examples/mxl-data-receiver/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-data-receiver.json
+  mxl-data-receiver.json
 
     
   </span>
@@ -879,14 +852,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-data-source/" class="md-nav__link">
+      <a href="../../examples/mxl-data-source/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-data-source.json
+  mxl-data-source.json
 
     
   </span>
@@ -906,14 +879,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-sender/" class="md-nav__link">
+      <a href="../../examples/mxl-sender/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-sender.json
+  mxl-sender.json
 
     
   </span>
@@ -933,14 +906,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-video-flow/" class="md-nav__link">
+      <a href="../../examples/mxl-video-flow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-video-flow.json
+  mxl-video-flow.json
 
     
   </span>
@@ -960,14 +933,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-video-receiver/" class="md-nav__link">
+      <a href="../../examples/mxl-video-receiver/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-video-receiver.json
+  mxl-video-receiver.json
 
     
   </span>
@@ -987,14 +960,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/mxl-video-source/" class="md-nav__link">
+      <a href="../../examples/mxl-video-source/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: mxl-video-source.json
+  mxl-video-source.json
 
     
   </span>
@@ -1014,14 +987,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/receiver-transport-parameters-active/" class="md-nav__link">
+      <a href="../../examples/receiver-transport-parameters-active/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: receiver-transport-parameters-active.json
+  receiver-transport-parameters-active.json
 
     
   </span>
@@ -1041,14 +1014,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/sender-transport-parameters-active/" class="md-nav__link">
+      <a href="../../examples/sender-transport-parameters-active/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: sender-transport-parameters-active.json
+  sender-transport-parameters-active.json
 
     
   </span>
@@ -1068,93 +1041,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/transport-parameters-constraints/" class="md-nav__link">
+      <a href="../../examples/transport-parameters-constraints/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-  Example: transport-parameters-constraints.json
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Images
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-  Images
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../images/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  README
+  transport-parameters-constraints.json
 
     
   </span>
@@ -1219,63 +1113,39 @@
   
 
 
-<h1 id="receiver_transport_params_ext">receiver_transport_params_ext</h1>
+<h1 id="constraints-schema-mxl">constraints-schema-mxl</h1>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">With refs</label><label for="__tabbed_1_2">Resolved</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="../receiver_transport_params_ext.json">Raw file</a></p>
-<p><div class="json-viewer">
-  <div class="json-controls" role="group" aria-label="JSON folding controls">
-    <button type="button" class="json-control" data-json-action="expand">Expand all</button>
-    <button type="button" class="json-control" data-json-action="collapse">Collapse all</button>
+<p><div class="json-viewer" data-source="ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDQvc2NoZW1hIyIsCiAgInR5cGUiOiAib2JqZWN0IiwKICAiZGVzY3JpcHRpb24iOiAiVXNlZCB0byBleHByZXNzIHRoZSBkeW5hbWljIGNvbnN0cmFpbnRzIG9uIE1YTCB0cmFuc3BvcnQgcGFyYW1ldGVycy4gVGhlc2UgY29uc3RyYWludHMgbWF5IGJlIHNldCBhbmQgY2hhbmdlZCBhdCBydW4gdGltZS4gRXZlcnkgdHJhbnNwb3J0IHBhcmFtZXRlciBtdXN0IGhhdmUgYW4gZW50cnksIGV2ZW4gaWYgaXQgaXMgb25seSBhbiBlbXB0eSBvYmplY3QuIiwKICAicmVxdWlyZWQiOiBbCiAgICAibXhsX2RvbWFpbl9pZCIsCiAgICAibXhsX2Zsb3dfaWQiCiAgXSwKICAiYWRkaXRpb25hbFByb3BlcnRpZXMiOiBmYWxzZSwKICAicGF0dGVyblByb3BlcnRpZXMiOiB7CiAgICAiXmV4dF9bYS16QS1aMC05X10rJCI6IHsKICAgICAgIiRyZWYiOiAiY29uc3RyYWludC1zY2hlbWEuanNvbiMvZGVmaW5pdGlvbnMvY29uc3RyYWludCIKICAgIH0KICB9LAogICJwcm9wZXJ0aWVzIjogewogICAgIm14bF9kb21haW5faWQiOiB7CiAgICAgICIkcmVmIjogImNvbnN0cmFpbnQtc2NoZW1hLmpzb24jL2RlZmluaXRpb25zL2NvbnN0cmFpbnQiCiAgICB9LAogICAgIm14bF9mbG93X2lkIjogewogICAgICAiJHJlZiI6ICJjb25zdHJhaW50LXNjaGVtYS5qc29uIy9kZWZpbml0aW9ucy9jb25zdHJhaW50IgogICAgfQogIH0KfQo=" data-language="json">
+  <label class="source-viewer-mode">View: <select data-source-mode>
+    <option value="folding" selected>Folding</option>
+    <option value="raw">Raw</option>
+  </select></label>
+  <div class="source-viewer-folding">
+    <div class="source-viewer-controls" role="group" aria-label="JSON source controls">
+      <button type="button" data-source-action="expand">Expand all</button>
+      <button type="button" data-source-action="collapse">Collapse all</button>
+    </div>
+    <div class="source-editor" role="region" aria-label="Foldable JSON source"></div>
   </div>
-<details class="json-node" open>
-  <summary>{ <span class="json-fold">…</span> <span class="json-collapsed-close">}</span></summary>
-  <div class="json-children">
-    <div class="json-line"><span class="json-key">&quot;$schema&quot;</span>: <span class="json-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span><span class="json-comma">,</span></div>
-    <div class="json-line"><span class="json-key">&quot;description&quot;</span>: <span class="json-string">&quot;Describes external Receiver transport parameters defined in other AMWA specifications. The constraints in this schema are minimum constraints, but may be further constrained at the constraints endpoint.&quot;</span><span class="json-comma">,</span></div>
-    <div class="json-line"><span class="json-key">&quot;title&quot;</span>: <span class="json-string">&quot;External Receiver Transport Parameters&quot;</span><span class="json-comma">,</span></div>
-    <details class="json-node">
-      <summary><span class="json-key">&quot;type&quot;</span>: [ <span class="json-fold">…</span> <span class="json-collapsed-close">]</span></summary>
-      <div class="json-children">
-        <div class="json-line"><span class="json-string">&quot;string&quot;</span><span class="json-comma">,</span></div>
-        <div class="json-line"><span class="json-string">&quot;boolean&quot;</span><span class="json-comma">,</span></div>
-        <div class="json-line"><span class="json-string">&quot;null&quot;</span><span class="json-comma">,</span></div>
-        <div class="json-line"><span class="json-string">&quot;number&quot;</span></div>
-      </div>
-      <div class="json-close">]</div>
-    </details>
-  </div>
-  <div class="json-close">}</div>
-</details>
+  <pre class="source-viewer-raw" hidden><code></code></pre>
 </div></p>
 </div>
 <div class="tabbed-block">
-<p><a href="../resolved/receiver_transport_params_ext.json">Resolved JSON file</a></p>
-<p><div class="json-viewer">
-  <div class="json-controls" role="group" aria-label="JSON folding controls">
-    <button type="button" class="json-control" data-json-action="expand">Expand all</button>
-    <button type="button" class="json-control" data-json-action="collapse">Collapse all</button>
+<p><div class="json-viewer" data-source="ewogICIkc2NoZW1hIjogImh0dHA6Ly9qc29uLXNjaGVtYS5vcmcvZHJhZnQtMDQvc2NoZW1hIyIsCiAgInR5cGUiOiAib2JqZWN0IiwKICAiZGVzY3JpcHRpb24iOiAiVXNlZCB0byBleHByZXNzIHRoZSBkeW5hbWljIGNvbnN0cmFpbnRzIG9uIE1YTCB0cmFuc3BvcnQgcGFyYW1ldGVycy4gVGhlc2UgY29uc3RyYWludHMgbWF5IGJlIHNldCBhbmQgY2hhbmdlZCBhdCBydW4gdGltZS4gRXZlcnkgdHJhbnNwb3J0IHBhcmFtZXRlciBtdXN0IGhhdmUgYW4gZW50cnksIGV2ZW4gaWYgaXQgaXMgb25seSBhbiBlbXB0eSBvYmplY3QuIiwKICAicmVxdWlyZWQiOiBbCiAgICAibXhsX2RvbWFpbl9pZCIsCiAgICAibXhsX2Zsb3dfaWQiCiAgXSwKICAiYWRkaXRpb25hbFByb3BlcnRpZXMiOiBmYWxzZSwKICAicGF0dGVyblByb3BlcnRpZXMiOiB7CiAgICAiXmV4dF9bYS16QS1aMC05X10rJCI6IHsKICAgICAgInR5cGUiOiAib2JqZWN0IiwKICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBjb25zdHJhaW50cyBmb3IgYSBzaW5nbGUgdHJhbnNwb3J0IHBhcmFtZXRlciIsCiAgICAgICJwcm9wZXJ0aWVzIjogewogICAgICAgICJtYXhpbXVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBpbmNsdXNpdmUgbWF4aW11bSB2YWx1ZSB0aGUgcGFyYW1ldGVyIGNhbiBiZSBzZXQgdG8iLAogICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICJpbnRlZ2VyIiwKICAgICAgICAgICAgIm51bWJlciIKICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJtaW5pbXVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBpbmNsdXNpdmUgbWluaW11bSB2YWx1ZSB0aGUgcGFyYW1ldGVyIGNhbiBiZSBzZXQgdG8iLAogICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICJpbnRlZ2VyIiwKICAgICAgICAgICAgIm51bWJlciIKICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJlbnVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkFuIGFycmF5IG9mIGFsbG93ZWQgdmFsdWVzIiwKICAgICAgICAgICJ0eXBlIjogImFycmF5IiwKICAgICAgICAgICJtaW5JdGVtcyI6IDEsCiAgICAgICAgICAidW5pcXVlSXRlbXMiOiB0cnVlLAogICAgICAgICAgIml0ZW1zIjogewogICAgICAgICAgICAiYW55T2YiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAiYm9vbGVhbiIKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ0eXBlIjogImludGVnZXIiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidHlwZSI6ICJudWxsIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAibnVtYmVyIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAic3RyaW5nIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXQogICAgICAgICAgfQogICAgICAgIH0sCiAgICAgICAgInBhdHRlcm4iOiB7CiAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiQSByZWdleCBwYXR0ZXJuIHRoYXQgbXVzdCBiZSBzYXRpc2ZpZWQgZm9yIHRoaXMgcGFyYW1ldGVyIiwKICAgICAgICAgICJ0eXBlIjogInN0cmluZyIsCiAgICAgICAgICAiZm9ybWF0IjogInJlZ2V4IgogICAgICAgIH0sCiAgICAgICAgImRlc2NyaXB0aW9uIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkEgaHVtYW4gcmVhZGFibGUgc3RyaW5nIGRlc2NyaWJpbmcgdGhlIGNvbnN0cmFpbnQgKG9wdGlvbmFsKSIsCiAgICAgICAgICAidHlwZSI6ICJzdHJpbmciCiAgICAgICAgfQogICAgICB9LAogICAgICAiYWRkaXRpb25hbFByb3BlcnRpZXMiOiBmYWxzZQogICAgfQogIH0sCiAgInByb3BlcnRpZXMiOiB7CiAgICAibXhsX2RvbWFpbl9pZCI6IHsKICAgICAgInR5cGUiOiAib2JqZWN0IiwKICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBjb25zdHJhaW50cyBmb3IgYSBzaW5nbGUgdHJhbnNwb3J0IHBhcmFtZXRlciIsCiAgICAgICJwcm9wZXJ0aWVzIjogewogICAgICAgICJtYXhpbXVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBpbmNsdXNpdmUgbWF4aW11bSB2YWx1ZSB0aGUgcGFyYW1ldGVyIGNhbiBiZSBzZXQgdG8iLAogICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICJpbnRlZ2VyIiwKICAgICAgICAgICAgIm51bWJlciIKICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJtaW5pbXVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBpbmNsdXNpdmUgbWluaW11bSB2YWx1ZSB0aGUgcGFyYW1ldGVyIGNhbiBiZSBzZXQgdG8iLAogICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICJpbnRlZ2VyIiwKICAgICAgICAgICAgIm51bWJlciIKICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJlbnVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkFuIGFycmF5IG9mIGFsbG93ZWQgdmFsdWVzIiwKICAgICAgICAgICJ0eXBlIjogImFycmF5IiwKICAgICAgICAgICJtaW5JdGVtcyI6IDEsCiAgICAgICAgICAidW5pcXVlSXRlbXMiOiB0cnVlLAogICAgICAgICAgIml0ZW1zIjogewogICAgICAgICAgICAiYW55T2YiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAiYm9vbGVhbiIKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ0eXBlIjogImludGVnZXIiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidHlwZSI6ICJudWxsIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAibnVtYmVyIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAic3RyaW5nIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXQogICAgICAgICAgfQogICAgICAgIH0sCiAgICAgICAgInBhdHRlcm4iOiB7CiAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiQSByZWdleCBwYXR0ZXJuIHRoYXQgbXVzdCBiZSBzYXRpc2ZpZWQgZm9yIHRoaXMgcGFyYW1ldGVyIiwKICAgICAgICAgICJ0eXBlIjogInN0cmluZyIsCiAgICAgICAgICAiZm9ybWF0IjogInJlZ2V4IgogICAgICAgIH0sCiAgICAgICAgImRlc2NyaXB0aW9uIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkEgaHVtYW4gcmVhZGFibGUgc3RyaW5nIGRlc2NyaWJpbmcgdGhlIGNvbnN0cmFpbnQgKG9wdGlvbmFsKSIsCiAgICAgICAgICAidHlwZSI6ICJzdHJpbmciCiAgICAgICAgfQogICAgICB9LAogICAgICAiYWRkaXRpb25hbFByb3BlcnRpZXMiOiBmYWxzZQogICAgfSwKICAgICJteGxfZmxvd19pZCI6IHsKICAgICAgInR5cGUiOiAib2JqZWN0IiwKICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBjb25zdHJhaW50cyBmb3IgYSBzaW5nbGUgdHJhbnNwb3J0IHBhcmFtZXRlciIsCiAgICAgICJwcm9wZXJ0aWVzIjogewogICAgICAgICJtYXhpbXVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBpbmNsdXNpdmUgbWF4aW11bSB2YWx1ZSB0aGUgcGFyYW1ldGVyIGNhbiBiZSBzZXQgdG8iLAogICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICJpbnRlZ2VyIiwKICAgICAgICAgICAgIm51bWJlciIKICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJtaW5pbXVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlRoZSBpbmNsdXNpdmUgbWluaW11bSB2YWx1ZSB0aGUgcGFyYW1ldGVyIGNhbiBiZSBzZXQgdG8iLAogICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICJpbnRlZ2VyIiwKICAgICAgICAgICAgIm51bWJlciIKICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJlbnVtIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkFuIGFycmF5IG9mIGFsbG93ZWQgdmFsdWVzIiwKICAgICAgICAgICJ0eXBlIjogImFycmF5IiwKICAgICAgICAgICJtaW5JdGVtcyI6IDEsCiAgICAgICAgICAidW5pcXVlSXRlbXMiOiB0cnVlLAogICAgICAgICAgIml0ZW1zIjogewogICAgICAgICAgICAiYW55T2YiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAiYm9vbGVhbiIKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ0eXBlIjogImludGVnZXIiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidHlwZSI6ICJudWxsIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAibnVtYmVyIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInR5cGUiOiAic3RyaW5nIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXQogICAgICAgICAgfQogICAgICAgIH0sCiAgICAgICAgInBhdHRlcm4iOiB7CiAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiQSByZWdleCBwYXR0ZXJuIHRoYXQgbXVzdCBiZSBzYXRpc2ZpZWQgZm9yIHRoaXMgcGFyYW1ldGVyIiwKICAgICAgICAgICJ0eXBlIjogInN0cmluZyIsCiAgICAgICAgICAiZm9ybWF0IjogInJlZ2V4IgogICAgICAgIH0sCiAgICAgICAgImRlc2NyaXB0aW9uIjogewogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkEgaHVtYW4gcmVhZGFibGUgc3RyaW5nIGRlc2NyaWJpbmcgdGhlIGNvbnN0cmFpbnQgKG9wdGlvbmFsKSIsCiAgICAgICAgICAidHlwZSI6ICJzdHJpbmciCiAgICAgICAgfQogICAgICB9LAogICAgICAiYWRkaXRpb25hbFByb3BlcnRpZXMiOiBmYWxzZQogICAgfQogIH0KfQo=" data-language="json">
+  <label class="source-viewer-mode">View: <select data-source-mode>
+    <option value="folding" selected>Folding</option>
+    <option value="raw">Raw</option>
+  </select></label>
+  <div class="source-viewer-folding">
+    <div class="source-viewer-controls" role="group" aria-label="JSON source controls">
+      <button type="button" data-source-action="expand">Expand all</button>
+      <button type="button" data-source-action="collapse">Collapse all</button>
+    </div>
+    <div class="source-editor" role="region" aria-label="Foldable JSON source"></div>
   </div>
-<details class="json-node" open>
-  <summary>{ <span class="json-fold">…</span> <span class="json-collapsed-close">}</span></summary>
-  <div class="json-children">
-    <div class="json-line"><span class="json-key">&quot;$schema&quot;</span>: <span class="json-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span><span class="json-comma">,</span></div>
-    <div class="json-line"><span class="json-key">&quot;description&quot;</span>: <span class="json-string">&quot;Describes external Receiver transport parameters defined in other AMWA specifications. The constraints in this schema are minimum constraints, but may be further constrained at the constraints endpoint.&quot;</span><span class="json-comma">,</span></div>
-    <div class="json-line"><span class="json-key">&quot;title&quot;</span>: <span class="json-string">&quot;External Receiver Transport Parameters&quot;</span><span class="json-comma">,</span></div>
-    <details class="json-node">
-      <summary><span class="json-key">&quot;type&quot;</span>: [ <span class="json-fold">…</span> <span class="json-collapsed-close">]</span></summary>
-      <div class="json-children">
-        <div class="json-line"><span class="json-string">&quot;string&quot;</span><span class="json-comma">,</span></div>
-        <div class="json-line"><span class="json-string">&quot;boolean&quot;</span><span class="json-comma">,</span></div>
-        <div class="json-line"><span class="json-string">&quot;null&quot;</span><span class="json-comma">,</span></div>
-        <div class="json-line"><span class="json-string">&quot;number&quot;</span></div>
-      </div>
-      <div class="json-close">]</div>
-    </details>
-  </div>
-  <div class="json-close">}</div>
-</details>
+  <pre class="source-viewer-raw" hidden><code></code></pre>
 </div></p>
 </div>
 </div>
@@ -1331,12 +1201,18 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":[],"search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.49251538.min.js"></script>
       
-        <script src="../../../javascripts/json-viewer.js"></script>
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":[],"redirect":null,"search":"../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../../javascripts/json-viewer.js"></script>
+      
+        <script src="../../javascripts/amwa-branding.js"></script>
       
     
   </body>
