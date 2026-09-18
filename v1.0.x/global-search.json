@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "repository": "AMWA-TV/bcp-007-03",
+  "documents": [
+    {
+      "title": "AMWA BCP-007-03: NMOS With MXL",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/NMOS-With-MXL/",
+      "text": "AMWA BCP-007-03: NMOS With MXL AMWA BCP-007-03: NMOS With MXL Introduction Use of Normative Language Definitions MXL IS-04 Sources, Flows and Senders Sources Flows Senders MXL IS-04 Receivers MXL IS-05 Senders and Receivers Transport Parameters Receivers Senders MXL Domain volume and identity mapping Controllers NMOS With MXL - AMWA BCP-007-03: NMOS Support for MXL Skip to content AMWA BCP-007-03: NMOS With MXL Introduction MXL provides an open and non-proprietary exchange layer within Dynamic Media Facilities. This document outlines how MXL enabled media functions can be managed through AMWA IS-04 and IS-05 . Use of Normative Language The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\", \"MAY\", and \"OPTIONAL\" in this document are to be interpreted as described in RFC 2119 . Definitions The NMOS terms 'Controller', 'Node', 'Source', 'Flow', 'Sender', 'Receiver' are used as defined in the NMOS Glossary . MXL IS-04 Sources, Flows and Senders Nodes that encapsulate media functions containing MXL writers MUST expose Source, Flow and Sender resources for each MXL writer in their IS-04 Node API. Nodes compliant with this specification MUST implement IS-04 v1.3 or higher. Sources An MXL Source resource MUST set the format attribute to a value specified in the NMOS formats parameter register . Examples of Source resources are provided in Examples . Flows An MXL Flow resource MUST set the format attribute to a value specified in the NMOS formats parameter register . An MXL Flow resource MUST set the media_type attribute to a value specified in the NMOS media types parameter register . Typical values used by MXL Flow resources for the media_type attribute include but are not limited to: video/v210 video/v210a audio/float32 video/smpte291 Examples of Flow resources are provided in Examples . Senders An MXL Sender resource MUST set the transport attribute to urn:x-nmos:transport:mxl . An MXL Sender resource MUST expose an empty interface_bindings array. An example Sender resource is provided in Examples . Transport file usage MXL does not require a transport file. The manifest_href attribute of an MXL Sender MUST always be set to null . The response for requests against the /transportfile endpoint of an MXL IS-05 Sender MUST always return a 404. MXL IS-04 Receivers Nodes that encapsulate media functions containing MXL readers MUST expose a Receiver resource for each MXL reader in their IS-04 Node API. An MXL Receiver resource MUST set the transport attribute to urn:x-nmos:transport:mxl . An MXL Receiver resource MUST expose an empty interface_bindings array. An MXL Receiver resource MUST set the format attribute to a value specified in the NMOS formats parameter register . An MXL Receiver resource MUST set the media_types attribute to at least one value. The values used MUST be specified in the NMOS media types parameter register . Typical values used by MXL Receiver resources for the media_types attribute include but are not limited to: video/v210 video/v210a audio/float32 video/smpte291 The Receiver MUST express its limitations or preferences regarding the MXL Flows that it supports consuming by declaring Receiver Capabilities in accordance with the BCP-004-01 specification. The Receiver SHOULD express its capabilities as precisely as possible, to enable a Controller to determine, with high confidence, the Receiver's compatibility with available MXL Flows. It is not always practical for the parameter constraints to enumerate every type of MXL Flow a Receiver can or cannot consume; however, they SHOULD describe as many commonly used operating points as practical, along with any preferences. The Receiver MUST use the constraint_sets parameter within the caps object to describe supported combinations of parameters, using the parameter constraints defined in the Capabilities Register of the NMOS Parameter Registers. The full details are described in BCP-004-01 NMOS Receiver Capabilities. An example Receiver resource is provided in Examples . MXL IS-05 Senders and Receivers Nodes compliant with this specification MUST implement IS-05 v1.2 or higher. Connection Management using IS-05 proceeds in the same manner as for any other transport, using MXL-specific transport parameters defined in MXL Sender transport parameters and MXL Receiver transport parameters . The mxl_domain_id and mxl_flow_id transport parameters MUST be present in the IS-05 active , staged , and constraints endpoints of an MXL Sender and Receiver. MXL Senders and Receivers MUST always use a single set of transport parameters in the transport parameters arrays in both the staged and active endpoints. MXL Senders and Receivers MUST always use a single set of constraints in the constraints endpoint array. Transport Parameters Name Description mxl_domain_id Specifies the MXL Domain ID where the MXL Flow will be located. The Sender and Receiver list allowed values in the constraints endpoint. mxl_flow_id Specifies the MXL Flow ID which will be used for the write or read operation. The Sender and Receiver list allowed values in the constraints endpoint. Where a value is not yet determined, implementations MUST use null , consistent with IS-05 APIs: Server Side Implementation . IS-05 APIs: Server Side Implementation , Use of auto allows \"auto\" in /staged so that the Sender or Receiver may select a transport parameter value itself. API implementations MUST NOT list \"auto\" as an option via the /constraints endpoint. Support for \"auto\" indicates that an implementation supports automatic-selection semantics for that parameter in /staged . It does not guarantee that every staged configuration can be activated. A Sender or Receiver MUST reject a staging request that supplies a parameter value which is invalid against the schema and constraints, or which cannot be applied in the current operating context (for example, an mxl_domain_id that refers to an MXL Domain the Node is not capable of accessi",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "domain_def.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/domain_def/",
+      "text": "domain_def.json domain_def.json domain_def.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content domain_def.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "Examples",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/",
+      "text": "Examples Examples Examples - AMWA BCP-007-03: NMOS Support for MXL Skip to content Examples domain_def.json mxl-audio-flow.json mxl-audio-receiver.json mxl-audio-source.json mxl-data-flow.json mxl-data-receiver.json mxl-data-source.json mxl-sender.json mxl-video-flow.json mxl-video-receiver.json mxl-video-source.json receiver-transport-parameters-active.json sender-transport-parameters-active.json transport-parameters-constraints.json",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-audio-flow.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-audio-flow/",
+      "text": "mxl-audio-flow.json mxl-audio-flow.json mxl-audio-flow.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-audio-flow.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-audio-receiver.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-audio-receiver/",
+      "text": "mxl-audio-receiver.json mxl-audio-receiver.json mxl-audio-receiver.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-audio-receiver.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-audio-source.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-audio-source/",
+      "text": "mxl-audio-source.json mxl-audio-source.json mxl-audio-source.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-audio-source.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-data-flow.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-data-flow/",
+      "text": "mxl-data-flow.json mxl-data-flow.json mxl-data-flow.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-data-flow.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-data-receiver.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-data-receiver/",
+      "text": "mxl-data-receiver.json mxl-data-receiver.json mxl-data-receiver.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-data-receiver.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-data-source.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-data-source/",
+      "text": "mxl-data-source.json mxl-data-source.json mxl-data-source.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-data-source.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-sender.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-sender/",
+      "text": "mxl-sender.json mxl-sender.json mxl-sender.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-sender.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-video-flow.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-video-flow/",
+      "text": "mxl-video-flow.json mxl-video-flow.json mxl-video-flow.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-video-flow.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-video-receiver.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-video-receiver/",
+      "text": "mxl-video-receiver.json mxl-video-receiver.json mxl-video-receiver.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-video-receiver.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl-video-source.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/mxl-video-source/",
+      "text": "mxl-video-source.json mxl-video-source.json mxl-video-source.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl-video-source.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "receiver-transport-parameters-active.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/receiver-transport-parameters-active/",
+      "text": "receiver-transport-parameters-active.json receiver-transport-parameters-active.json receiver-transport-parameters-active.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content receiver-transport-parameters-active.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "sender-transport-parameters-active.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/sender-transport-parameters-active/",
+      "text": "sender-transport-parameters-active.json sender-transport-parameters-active.json sender-transport-parameters-active.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content sender-transport-parameters-active.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "transport-parameters-constraints.json",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/examples/transport-parameters-constraints/",
+      "text": "transport-parameters-constraints.json transport-parameters-constraints.json transport-parameters-constraints.json - AMWA BCP-007-03: NMOS Support for MXL Skip to content transport-parameters-constraints.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "README",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/images/",
+      "text": "README README README - AMWA BCP-007-03: NMOS Support for MXL Skip to content README This directory is for images used in documentation",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "AMWA BCP-007-03: NMOS Support for MXL",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/",
+      "text": "AMWA BCP-007-03: NMOS Support for MXL AMWA BCP-007-03: NMOS Support for MXL What does it do? Why does it matter? How does it work? Getting started AMWA BCP-007-03: NMOS Support for MXL - AMWA BCP-007-03: NMOS Support for MXL Skip to content AMWA BCP-007-03: NMOS Support for MXL GitHub repository This repository holds the source for this Specification, part of the family of Networked Media Open Specifications from the Advanced Media Workflow Association What does it do? Establishes a new IS-05 transport for NMOS Senders and Receivers implementing MXL and allows Controllers to establish compatible connections. Establishes a standardized mechanism for NMOS Senders and Receivers to declare support for MXL. Why does it matter? An NMOS Controller can connect compatible MXL Receivers to MXL Senders. How does it work? Documents how MXL capabilities are announced by both Senders and Receivers. Outlines the requirements for Senders, Receivers, and Controllers regarding MXL support. Getting started There is more information about the NMOS Specifications and their GitHub repos at https://specs.amwa.tv/nmos .",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "constraint-schema",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/constraint-schema/",
+      "text": "constraint-schema constraint-schema constraint-schema - AMWA BCP-007-03: NMOS Support for MXL Skip to content constraint-schema With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "constraints-schema-mxl",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/constraints-schema-mxl/",
+      "text": "constraints-schema-mxl constraints-schema-mxl constraints-schema-mxl - AMWA BCP-007-03: NMOS Support for MXL Skip to content constraints-schema-mxl With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "JSON Schemas",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/",
+      "text": "JSON Schemas JSON Schemas JSON Schemas - AMWA BCP-007-03: NMOS Support for MXL Skip to content JSON Schemas constraint-schema constraints-schema-mxl mxl_domain_definition mxl_uuid receiver_transport_params_ext receiver_transport_params_mxl sender_transport_params_ext sender_transport_params_mxl",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl_domain_definition",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/mxl_domain_definition/",
+      "text": "mxl_domain_definition mxl_domain_definition mxl_domain_definition - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl_domain_definition With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "mxl_uuid",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/mxl_uuid/",
+      "text": "mxl_uuid mxl_uuid mxl_uuid - AMWA BCP-007-03: NMOS Support for MXL Skip to content mxl_uuid With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "receiver_transport_params_ext",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/receiver_transport_params_ext/",
+      "text": "receiver_transport_params_ext receiver_transport_params_ext receiver_transport_params_ext - AMWA BCP-007-03: NMOS Support for MXL Skip to content receiver_transport_params_ext With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "receiver_transport_params_mxl",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/receiver_transport_params_mxl/",
+      "text": "receiver_transport_params_mxl receiver_transport_params_mxl receiver_transport_params_mxl - AMWA BCP-007-03: NMOS Support for MXL Skip to content receiver_transport_params_mxl With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "sender_transport_params_ext",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/sender_transport_params_ext/",
+      "text": "sender_transport_params_ext sender_transport_params_ext sender_transport_params_ext - AMWA BCP-007-03: NMOS Support for MXL Skip to content sender_transport_params_ext With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    },
+    {
+      "title": "sender_transport_params_mxl",
+      "url": "https://specs.amwa.tv/new/bcp-007-03/latest/schemas/sender_transport_params_mxl/",
+      "text": "sender_transport_params_mxl sender_transport_params_mxl sender_transport_params_mxl - AMWA BCP-007-03: NMOS Support for MXL Skip to content sender_transport_params_mxl With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-007-03"
+    }
+  ]
+}
