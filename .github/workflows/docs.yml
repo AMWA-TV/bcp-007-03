@@ -14,6 +14,11 @@ on:
         description: Optional branch or tag to rebuild
         required: false
         default: ''
+      rebuild_all:
+        description: Rebuild all matching branches and release tags
+        required: false
+        type: boolean
+        default: false
 
 
 permissions:
@@ -31,5 +36,6 @@ jobs:
       site-name: bcp-007-03
       public-docs-root: https://specs.amwa.tv/new/bcp-007-03
       source-ref: ${{ inputs.ref || github.ref_name }}
+      rebuild-all: ${{ inputs.rebuild_all || false }}
       toolkit-ref: main
     secrets: inherit
