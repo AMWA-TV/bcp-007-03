@@ -1,81 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/NMOS-With-MXL/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/404/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/NMOS-With-MXL/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/constraint-schema/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/constraints-schema-mxl/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/domain_def/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/mxl_domain_definition/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-audio-flow/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/mxl_uuid/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-audio-receiver/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/receiver_transport_params_ext/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-audio-source/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/receiver_transport_params_mxl/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-data-flow/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/sender_transport_params_ext/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-data-receiver/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/schemas/sender_transport_params_mxl/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-data-source/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-sender/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/domain_def/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-video-flow/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-audio-flow/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-video-receiver/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-audio-receiver/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/mxl-video-source/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-audio-source/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/receiver-transport-parameters-active/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-data-flow/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/sender-transport-parameters-active/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-data-receiver/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/examples/transport-parameters-constraints/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-data-source/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/images/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-sender/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-video-flow/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/constraint-schema/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-video-receiver/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/constraints-schema-mxl/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/mxl-video-source/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/mxl_domain_definition/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/receiver-transport-parameters-active/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/mxl_uuid/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/sender-transport-parameters-active/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/receiver_transport_params_ext/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-007-03/v1.0.x/examples/transport-parameters-constraints/</loc>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/receiver_transport_params_mxl/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/sender_transport_params_ext/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/bcp-007-03/v1.0.x/v1.0.x/schemas/sender_transport_params_mxl/</loc>
       </url>
 </urlset>
